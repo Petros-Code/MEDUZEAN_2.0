@@ -39,7 +39,9 @@ spl_autoload_register(function ($class) {
     $relative_class = substr($class, strlen($prefix));
     $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
 
-    error_log("[Meduzean Autoload] Trying to load $class from $file");
+    if (defined('WP_DEBUG') && WP_DEBUG) {
+        error_log("[Meduzean Autoload] Trying to load $class from $file");
+    }
 
     if (file_exists($file)) {
         require_once $file;

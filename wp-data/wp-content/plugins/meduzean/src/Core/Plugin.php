@@ -68,6 +68,6 @@ class Plugin {
         add_action( 'rest_api_init', [ $this->rest, 'register_routes' ] );
 
         // cron action hook (called by wp-cron)
-        add_action( 'meduzean_daily_check', [ $this->cron, 'daily_check' ] );
+        add_action( 'meduzean_ean_manager_daily_check', [ $this->cron, 'daily_check' ] );
     }
 }
