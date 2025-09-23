@@ -89,6 +89,52 @@ class Ean_Import_Page {
                     e.preventDefault();
                     return false;
                 }
+                
+                // Validation basique côté client
+                var invalidEans = [];
+                eans.forEach(function(ean, index) {
+                    var cleanEan = ean.replace(/\D/g, ''); // Garder seulement les chiffres
+                    if (cleanEan.length !== 13) {
+                        invalidEans.push('Ligne ' + (index + 1) + ': ' + ean);
+                    }
+                });
+                
+                if (invalidEans.length > 0) {
+                    if (confirm('<?php _e('Certains codes EAN semblent invalides:', 'meduzean'); ?>\n\n' + invalidEans.join('\n') + '\n\n<?php _e('Voulez-vous continuer quand même?', 'meduzean'); ?>')) {
+                        return true;
+                    } else {
+                        e.preventDefault();
+                        return false;
+                    }
+                }
+            });
+            
+            // Validation en temps réel
+            $('#manual_eans').on('input', function() {
+                var eans = $(this).val().split('\n');
+                var validCount = 0;
+                var invalidCount = 0;
+                
+                eans.forEach(function(ean) {
+                    var cleanEan = ean.replace(/\D/g, '');
+                    if (cleanEan.length === 13) {
+                        validCount++;
+                    } else if (cleanEan.length > 0) {
+                        invalidCount++;
+                    }
+                });
+                
+                // Mettre à jour l'aide
+                var helpText = '<?php _e('Entrez un code EAN par ligne (13 chiffres).', 'meduzean'); ?>';
+                if (validCount > 0 || invalidCount > 0) {
+                    helpText += ' <strong>' + validCount + ' <?php _e('valides', 'meduzean'); ?>';
+                    if (invalidCount > 0) {
+                        helpText += ', ' + invalidCount + ' <?php _e('invalides', 'meduzean'); ?>';
+                    }
+                    helpText += '</strong>';
+                }
+                
+                $(this).next('.description').html(helpText);
             });
         });
         </script>
@@ -182,15 +228,24 @@ class Ean_Import_Page {
     private function import_eans($eans) {
         $imported = 0;
         $errors = [];
+        $duplicates = [];
+        $invalid = [];
         
         foreach ($eans as $ean) {
+            // Nettoyer le code EAN
+            $ean = preg_replace('/\D/', '', $ean); // Garder seulement les chiffres
+            
+            if (empty($ean)) {
+                continue; // Ignorer les lignes vides
+            }
+            
             if (!Validator::is_valid_ean13($ean)) {
-                $errors[] = sprintf(__('Code EAN invalide: %s', 'meduzean'), $ean);
+                $invalid[] = $ean;
                 continue;
             }
             
             if ($this->table->ean_exists($ean)) {
-                $errors[] = sprintf(__('Code EAN déjà existant: %s', 'meduzean'), $ean);
+                $duplicates[] = $ean;
                 continue;
             }
             
@@ -201,14 +256,43 @@ class Ean_Import_Page {
             }
         }
         
+        // Construire les messages d'erreur détaillés
+        $error_messages = [];
+        
+        if (!empty($invalid)) {
+            $error_messages[] = sprintf(
+                __('%d codes EAN invalides: %s', 'meduzean'), 
+                count($invalid), 
+                implode(', ', $invalid)
+            );
+        }
+        
+        if (!empty($duplicates)) {
+            $error_messages[] = sprintf(
+                __('%d codes EAN déjà existants: %s', 'meduzean'), 
+                count($duplicates), 
+                implode(', ', $duplicates)
+            );
+        }
+        
+        // Ajouter les autres erreurs
+        $error_messages = array_merge($error_messages, $errors);
+        
         return [
             'imported' => $imported,
-            'errors' => $errors
+            'errors' => $error_messages,
+            'invalid_count' => count($invalid),
+            'duplicate_count' => count($duplicates)
         ];
     }
 
     private function handle_manual_eans() {
         if (!isset($_POST['meduzean_manual_nonce']) || !wp_verify_nonce($_POST['meduzean_manual_nonce'], 'meduzean_add_manual_ean')) {
+            return;
+        }
+
+        // Vérifier que le bouton "Ajouter les codes EAN" a été cliqué
+        if (!isset($_POST['add_manual_eans'])) {
             return;
         }
 
@@ -232,16 +316,39 @@ class Ean_Import_Page {
         $result = $this->import_eans($eans);
         $imported = $result['imported'];
         $errors = $result['errors'];
+        $duplicate_count = $result['duplicate_count'];
+        $invalid_count = $result['invalid_count'];
 
+        // Afficher les erreurs (doublons, codes invalides)
         if (!empty($errors)) {
             add_action('admin_notices', function() use ($errors) {
-                echo '<div class="notice notice-warning is-dismissible"><p>' . implode('<br>', $errors) . '</p></div>';
+                echo '<div class="notice notice-warning is-dismissible"><p><strong>' . __('Erreurs détectées:', 'meduzean') . '</strong><br>' . implode('<br>', $errors) . '</p></div>';
             });
         }
 
+        // Afficher le résumé détaillé
+        $summary_parts = [];
         if ($imported > 0) {
-            add_action('admin_notices', function() use ($imported) {
-                echo '<div class="notice notice-success is-dismissible"><p>' . sprintf(__('%d codes EAN ajoutés avec succès.', 'meduzean'), $imported) . '</p></div>';
+            $summary_parts[] = sprintf(__('%d codes EAN ajoutés avec succès', 'meduzean'), $imported);
+        }
+        if ($duplicate_count > 0) {
+            $summary_parts[] = sprintf(__('%d codes EAN déjà existants (ignorés)', 'meduzean'), $duplicate_count);
+        }
+        if ($invalid_count > 0) {
+            $summary_parts[] = sprintf(__('%d codes EAN invalides (ignorés)', 'meduzean'), $invalid_count);
+        }
+
+        if (!empty($summary_parts)) {
+            add_action('admin_notices', function() use ($summary_parts) {
+                $class = ($imported > 0) ? 'notice-success' : 'notice-info';
+                echo '<div class="notice ' . $class . ' is-dismissible"><p><strong>' . __('Résumé:', 'meduzean') . '</strong> ' . implode(' • ', $summary_parts) . '</p></div>';
+            });
+        }
+
+        // Si aucun EAN n'a été importé et qu'il n'y a pas d'erreurs, c'est que tous étaient des doublons
+        if ($imported === 0 && empty($errors) && $duplicate_count === 0 && $invalid_count === 0) {
+            add_action('admin_notices', function() {
+                echo '<div class="notice notice-info is-dismissible"><p>' . __('Aucun code EAN valide trouvé dans la saisie.', 'meduzean') . '</p></div>';
             });
         }
     }
