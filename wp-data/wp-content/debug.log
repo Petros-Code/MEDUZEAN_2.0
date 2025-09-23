@@ -1,0 +1,41 @@
+[23-Sep-2025 12:13:35 UTC] PHP Fatal error:  Uncaught Error: Class "Meduzean\EanManager\DB\Ean_Table" not found in /var/www/html/wp-content/plugins/meduzean/meduzean.php:59
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(324): meduzean_activate(false)
+#1 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /var/www/html/wp-admin/includes/plugin.php(703): do_action('activate_meduze...', false)
+#4 /var/www/html/wp-admin/plugins.php(60): activate_plugin('meduzean/meduze...', 'http://localhos...', false)
+#5 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/meduzean.php on line 59
+[23-Sep-2025 12:20:06 UTC] PHP Fatal error:  Uncaught Error: Class "Meduzean\EanManager\Cron\Cron_Handler" not found in /var/www/html/wp-content/plugins/meduzean/meduzean.php:63
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(324): meduzean_activate(false)
+#1 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /var/www/html/wp-admin/includes/plugin.php(703): do_action('activate_meduze...', false)
+#4 /var/www/html/wp-admin/plugins.php(60): activate_plugin('meduzean/meduze...', 'http://localhos...', false)
+#5 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/meduzean.php on line 63
+[23-Sep-2025 12:24:26 UTC] PHP Fatal error:  Uncaught Error: Class "Meduzean\EanManager\Cron\Cron_Handler" not found in /var/www/html/wp-content/plugins/meduzean/meduzean.php:63
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(324): meduzean_activate(false)
+#1 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /var/www/html/wp-admin/includes/plugin.php(703): do_action('activate_meduze...', false)
+#4 /var/www/html/wp-admin/plugins.php(60): activate_plugin('meduzean/meduze...', 'http://localhos...', false)
+#5 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/meduzean.php on line 63
+[23-Sep-2025 12:35:20 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[23-Sep-2025 12:35:20 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[23-Sep-2025 12:35:20 UTC] PHP Fatal error:  Uncaught Error: Class "Meduzean\EanManager\Core\Plugin" not found in /var/www/html/wp-content/plugins/meduzean/meduzean.php:71
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(324): {closure}('')
+#1 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#2 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /var/www/html/wp-settings.php(578): do_action('plugins_loaded')
+#4 /var/www/html/wp-config.php(141): require_once('/var/www/html/w...')
+#5 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#6 /var/www/html/wp-admin/admin.php(35): require_once('/var/www/html/w...')
+#7 /var/www/html/wp-admin/plugins.php(10): require_once('/var/www/html/w...')
+#8 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/meduzean.php on line 71
