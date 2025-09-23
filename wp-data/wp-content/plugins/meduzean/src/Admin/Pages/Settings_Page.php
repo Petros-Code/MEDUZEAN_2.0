@@ -11,6 +11,9 @@ class Settings_Page {
 
         // Gestion de la sauvegarde
         $this->handle_save();
+        
+        // Gestion du test d'alerte
+        $this->handle_test_alert();
 
         // Récupération des options
         $threshold = get_option('meduzean_low_stock_threshold', 10);
@@ -73,6 +76,15 @@ class Settings_Page {
             <div class="card" style="margin-top: 20px;">
                 <h2><?php _e('Statistiques', 'meduzean'); ?></h2>
                 <?php $this->render_stats(); ?>
+            </div>
+
+            <div class="card" style="margin-top: 20px;">
+                <h2><?php _e('Test d\'alerte', 'meduzean'); ?></h2>
+                <p><?php _e('Testez l\'envoi d\'un email d\'alerte pour vérifier la configuration.', 'meduzean'); ?></p>
+                <form method="post" style="display: inline-block;">
+                    <?php wp_nonce_field('meduzean_test_alert', 'meduzean_test_nonce'); ?>
+                    <?php submit_button(__('Envoyer un test d\'alerte', 'meduzean'), 'secondary', 'test_alert'); ?>
+                </form>
             </div>
         </div>
         <?php
@@ -145,5 +157,38 @@ class Settings_Page {
             </tbody>
         </table>
         <?php
+    }
+
+    private function handle_test_alert() {
+        if (!isset($_POST['meduzean_test_nonce']) || !wp_verify_nonce($_POST['meduzean_test_nonce'], 'meduzean_test_alert')) {
+            return;
+        }
+
+        if (!isset($_POST['test_alert'])) {
+            return;
+        }
+
+        // Utiliser le service email pour envoyer un test
+        $email_service = new \Meduzean\EanManager\Services\Email_Service();
+        $available_count = $this->get_available_count();
+        $threshold = get_option('meduzean_low_stock_threshold', 10);
+
+        $result = $email_service->send_low_stock_alert($available_count, $threshold);
+
+        if ($result) {
+            add_action('admin_notices', function() {
+                echo '<div class="notice notice-success is-dismissible"><p>' . __('Email de test envoyé avec succès !', 'meduzean') . '</p></div>';
+            });
+        } else {
+            add_action('admin_notices', function() {
+                echo '<div class="notice notice-error is-dismissible"><p>' . __('Erreur lors de l\'envoi de l\'email de test.', 'meduzean') . '</p></div>';
+            });
+        }
+    }
+
+    private function get_available_count() {
+        global $wpdb;
+        $table_name = $wpdb->prefix . 'ean_codes';
+        return (int) $wpdb->get_var("SELECT COUNT(*) FROM {$table_name} WHERE product_id IS NULL");
     }
 }
