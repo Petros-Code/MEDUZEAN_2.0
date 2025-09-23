@@ -210,18 +210,11 @@ class Ean_Import_Page {
             $result = $this->import_eans($eans);
             $imported = $result['imported'];
             $errors = $result['errors'];
+            $duplicate_count = $result['duplicate_count'];
+            $invalid_count = $result['invalid_count'];
             
-            if (!empty($errors)) {
-                add_action('admin_notices', function() use ($errors) {
-                    echo '<div class="notice notice-warning is-dismissible"><p>' . implode('<br>', $errors) . '</p></div>';
-                });
-            }
-            
-            if ($imported > 0) {
-                add_action('admin_notices', function() use ($imported) {
-                    echo '<div class="notice notice-success is-dismissible"><p>' . sprintf(__('%d codes EAN importés avec succès.', 'meduzean'), $imported) . '</p></div>';
-                });
-            }
+            // Afficher les messages de résultat
+            $this->display_import_results($imported, $errors, $duplicate_count, $invalid_count, 'csv');
         }
     }
 
@@ -237,27 +230,34 @@ class Ean_Import_Page {
         }
         
         foreach ($eans as $ean) {
-            // Nettoyer le code EAN
-            $ean = preg_replace('/\D/', '', $ean); // Garder seulement les chiffres
-            
-            if (empty($ean)) {
-                continue; // Ignorer les lignes vides
-            }
-            
-            if (!Validator::is_valid_ean13($ean)) {
-                $invalid[] = $ean;
-                continue;
-            }
-            
-            if ($this->table->ean_exists($ean)) {
-                $duplicates[] = $ean;
-                continue;
-            }
-            
-            if ($this->table->insert_ean($ean)) {
-                $imported++;
-            } else {
-                $errors[] = sprintf(__('Erreur lors de l\'insertion: %s', 'meduzean'), $ean);
+            try {
+                // Nettoyer le code EAN
+                $ean = preg_replace('/\D/', '', $ean); // Garder seulement les chiffres
+                
+                if (empty($ean)) {
+                    continue; // Ignorer les lignes vides
+                }
+                
+                if (!Validator::is_valid_ean13($ean)) {
+                    $invalid[] = $ean;
+                    continue;
+                }
+                
+                if ($this->table->ean_exists($ean)) {
+                    $duplicates[] = $ean;
+                    continue;
+                }
+                
+                if ($this->table->insert_ean($ean)) {
+                    $imported++;
+                } else {
+                    $errors[] = sprintf(__('Erreur lors de l\'insertion: %s', 'meduzean'), $ean);
+                }
+            } catch (Exception $e) {
+                if (defined('WP_DEBUG') && WP_DEBUG) {
+                    error_log('[Meduzean Debug] Exception processing EAN ' . $ean . ': ' . $e->getMessage());
+                }
+                $errors[] = sprintf(__('Erreur lors du traitement de %s: %s', 'meduzean'), $ean, $e->getMessage());
             }
         }
         
@@ -319,11 +319,6 @@ class Ean_Import_Page {
                 return;
             }
 
-            // Log pour debug
-            if (defined('WP_DEBUG') && WP_DEBUG) {
-                error_log('[Meduzean Debug] Processing ' . count($eans) . ' EAN codes: ' . implode(', ', $eans));
-            }
-
             // Vérifier que la table existe
             if (!$this->table) {
                 throw new Exception('Ean_Table not initialized');
@@ -335,14 +330,59 @@ class Ean_Import_Page {
             $duplicate_count = $result['duplicate_count'];
             $invalid_count = $result['invalid_count'];
 
-        // Afficher les erreurs (doublons, codes invalides)
-        if (!empty($errors)) {
-            add_action('admin_notices', function() use ($errors) {
-                echo '<div class="notice notice-warning is-dismissible"><p><strong>' . __('Erreurs détectées:', 'meduzean') . '</strong><br>' . implode('<br>', $errors) . '</p></div>';
+        // Afficher les messages de résultat
+        $this->display_import_results($imported, $errors, $duplicate_count, $invalid_count, 'manuel');
+
+        } catch (Exception $e) {
+            // Log l'erreur pour debug
+            if (defined('WP_DEBUG') && WP_DEBUG) {
+                error_log('[Meduzean Error] Exception in handle_manual_eans: ' . $e->getMessage());
+            }
+            
+            add_action('admin_notices', function() use ($e) {
+                echo '<div class="notice notice-error is-dismissible"><p><strong>' . __('Erreur critique:', 'meduzean') . '</strong> ' . esc_html($e->getMessage()) . '</p></div>';
+            });
+        }
+    }
+
+    /**
+     * Affiche les messages de résultat d'import de manière cohérente
+     */
+    private function display_import_results($imported, $errors, $duplicate_count, $invalid_count, $type = 'manuel') {
+        $type_label = ($type === 'csv') ? __('import CSV', 'meduzean') : __('saisie manuelle', 'meduzean');
+        
+        // Message principal de succès/échec
+        if ($imported > 0) {
+            add_action('admin_notices', function() use ($imported, $type_label) {
+                echo '<div class="notice notice-success is-dismissible">';
+                echo '<p><span class="dashicons dashicons-yes-alt" style="color: #00a32a; margin-right: 5px;"></span>';
+                echo '<strong>' . sprintf(__('Succès ! %d codes EAN ajoutés via %s.', 'meduzean'), $imported, $type_label) . '</strong></p>';
+                echo '</div>';
+            });
+        } else {
+            add_action('admin_notices', function() use ($type_label) {
+                echo '<div class="notice notice-warning is-dismissible">';
+                echo '<p><span class="dashicons dashicons-warning" style="color: #dba617; margin-right: 5px;"></span>';
+                echo '<strong>' . sprintf(__('Aucun code EAN ajouté via %s.', 'meduzean'), $type_label) . '</strong></p>';
+                echo '</div>';
             });
         }
 
-        // Afficher le résumé détaillé
+        // Détails des erreurs si il y en a
+        if (!empty($errors)) {
+            add_action('admin_notices', function() use ($errors) {
+                echo '<div class="notice notice-warning is-dismissible">';
+                echo '<p><strong>' . __('Détails des erreurs:', 'meduzean') . '</strong></p>';
+                echo '<ul style="margin-left: 20px;">';
+                foreach ($errors as $error) {
+                    echo '<li>' . esc_html($error) . '</li>';
+                }
+                echo '</ul>';
+                echo '</div>';
+            });
+        }
+
+        // Résumé détaillé
         $summary_parts = [];
         if ($imported > 0) {
             $summary_parts[] = sprintf(__('%d codes EAN ajoutés avec succès', 'meduzean'), $imported);
@@ -356,26 +396,21 @@ class Ean_Import_Page {
 
         if (!empty($summary_parts)) {
             add_action('admin_notices', function() use ($summary_parts, $imported) {
-                $class = ($imported > 0) ? 'notice-success' : 'notice-info';
-                echo '<div class="notice ' . $class . ' is-dismissible"><p><strong>' . __('Résumé:', 'meduzean') . '</strong> ' . implode(' • ', $summary_parts) . '</p></div>';
+                $class = ($imported > 0) ? 'notice-info' : 'notice-warning';
+                echo '<div class="notice ' . $class . ' is-dismissible">';
+                echo '<p><span class="dashicons dashicons-info" style="color: #72aee6; margin-right: 5px;"></span>';
+                echo '<strong>' . __('Résumé:', 'meduzean') . '</strong> ' . implode(' • ', $summary_parts) . '</p>';
+                echo '</div>';
             });
         }
 
-            // Si aucun EAN n'a été importé et qu'il n'y a pas d'erreurs, c'est que tous étaient des doublons
-            if ($imported === 0 && empty($errors) && $duplicate_count === 0 && $invalid_count === 0) {
-                add_action('admin_notices', function() {
-                    echo '<div class="notice notice-info is-dismissible"><p>' . __('Aucun code EAN valide trouvé dans la saisie.', 'meduzean') . '</p></div>';
-                });
-            }
-
-        } catch (Exception $e) {
-            // Log l'erreur pour debug
-            if (defined('WP_DEBUG') && WP_DEBUG) {
-                error_log('[Meduzean Error] Exception in handle_manual_eans: ' . $e->getMessage());
-            }
-            
-            add_action('admin_notices', function() use ($e) {
-                echo '<div class="notice notice-error is-dismissible"><p><strong>' . __('Erreur critique:', 'meduzean') . '</strong> ' . esc_html($e->getMessage()) . '</p></div>';
+        // Message spécial si aucun EAN valide trouvé
+        if ($imported === 0 && empty($errors) && $duplicate_count === 0 && $invalid_count === 0) {
+            add_action('admin_notices', function() {
+                echo '<div class="notice notice-info is-dismissible">';
+                echo '<p><span class="dashicons dashicons-info" style="color: #72aee6; margin-right: 5px;"></span>';
+                echo __('Aucun code EAN valide trouvé dans la saisie.', 'meduzean') . '</p>';
+                echo '</div>';
             });
         }
     }
