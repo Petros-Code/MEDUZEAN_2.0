@@ -39,3 +39,122 @@ Stack trace:
 #7 /var/www/html/wp-admin/plugins.php(10): require_once('/var/www/html/w...')
 #8 {main}
   thrown in /var/www/html/wp-content/plugins/meduzean/meduzean.php on line 71
+[23-Sep-2025 12:55:17 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[23-Sep-2025 12:55:17 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[23-Sep-2025 12:55:17 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[23-Sep-2025 12:55:17 UTC] PHP Fatal error:  Uncaught Error: Class "Meduzean\EanManager\Services\Email_Service" not found in /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php:51
+Stack trace:
+#0 /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php(43): Meduzean\EanManager\Core\Plugin->__construct()
+#1 /var/www/html/wp-content/plugins/meduzean/meduzean.php(71): Meduzean\EanManager\Core\Plugin::instance()
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): {closure}('')
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-settings.php(578): do_action('plugins_loaded')
+#6 /var/www/html/wp-config.php(141): require_once('/var/www/html/w...')
+#7 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#8 /var/www/html/wp-admin/admin.php(35): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-admin/plugins.php(10): require_once('/var/www/html/w...')
+#10 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php on line 51
+[23-Sep-2025 12:55:19 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[23-Sep-2025 12:55:19 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[23-Sep-2025 12:55:19 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[23-Sep-2025 12:55:19 UTC] PHP Fatal error:  Uncaught Error: Class "Meduzean\EanManager\Services\Email_Service" not found in /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php:51
+Stack trace:
+#0 /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php(43): Meduzean\EanManager\Core\Plugin->__construct()
+#1 /var/www/html/wp-content/plugins/meduzean/meduzean.php(71): Meduzean\EanManager\Core\Plugin::instance()
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): {closure}('')
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-settings.php(578): do_action('plugins_loaded')
+#6 /var/www/html/wp-config.php(141): require_once('/var/www/html/w...')
+#7 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#8 /var/www/html/wp-admin/admin.php(35): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-admin/plugins.php(10): require_once('/var/www/html/w...')
+#10 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php on line 51
+[23-Sep-2025 12:55:20 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[23-Sep-2025 12:55:20 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[23-Sep-2025 12:55:20 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[23-Sep-2025 12:55:20 UTC] PHP Fatal error:  Uncaught Error: Class "Meduzean\EanManager\Services\Email_Service" not found in /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php:51
+Stack trace:
+#0 /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php(43): Meduzean\EanManager\Core\Plugin->__construct()
+#1 /var/www/html/wp-content/plugins/meduzean/meduzean.php(71): Meduzean\EanManager\Core\Plugin::instance()
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): {closure}('')
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-settings.php(578): do_action('plugins_loaded')
+#6 /var/www/html/wp-config.php(141): require_once('/var/www/html/w...')
+#7 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#8 /var/www/html/wp-admin/admin.php(35): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-admin/plugins.php(10): require_once('/var/www/html/w...')
+#10 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php on line 51
+[23-Sep-2025 12:55:20 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[23-Sep-2025 12:55:20 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[23-Sep-2025 12:55:20 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[23-Sep-2025 12:55:20 UTC] PHP Fatal error:  Uncaught Error: Class "Meduzean\EanManager\Services\Email_Service" not found in /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php:51
+Stack trace:
+#0 /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php(43): Meduzean\EanManager\Core\Plugin->__construct()
+#1 /var/www/html/wp-content/plugins/meduzean/meduzean.php(71): Meduzean\EanManager\Core\Plugin::instance()
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): {closure}('')
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-settings.php(578): do_action('plugins_loaded')
+#6 /var/www/html/wp-config.php(141): require_once('/var/www/html/w...')
+#7 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#8 /var/www/html/wp-admin/admin.php(35): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-admin/plugins.php(10): require_once('/var/www/html/w...')
+#10 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php on line 51
+[23-Sep-2025 12:55:20 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[23-Sep-2025 12:55:20 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[23-Sep-2025 12:55:20 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[23-Sep-2025 12:55:20 UTC] PHP Fatal error:  Uncaught Error: Class "Meduzean\EanManager\Services\Email_Service" not found in /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php:51
+Stack trace:
+#0 /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php(43): Meduzean\EanManager\Core\Plugin->__construct()
+#1 /var/www/html/wp-content/plugins/meduzean/meduzean.php(71): Meduzean\EanManager\Core\Plugin::instance()
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): {closure}('')
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-settings.php(578): do_action('plugins_loaded')
+#6 /var/www/html/wp-config.php(141): require_once('/var/www/html/w...')
+#7 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#8 /var/www/html/wp-admin/admin.php(35): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-admin/plugins.php(10): require_once('/var/www/html/w...')
+#10 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php on line 51
+[23-Sep-2025 12:55:27 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[23-Sep-2025 12:55:27 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[23-Sep-2025 12:55:27 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[23-Sep-2025 12:55:27 UTC] PHP Fatal error:  Uncaught Error: Class "Meduzean\EanManager\Services\Email_Service" not found in /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php:51
+Stack trace:
+#0 /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php(43): Meduzean\EanManager\Core\Plugin->__construct()
+#1 /var/www/html/wp-content/plugins/meduzean/meduzean.php(71): Meduzean\EanManager\Core\Plugin::instance()
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): {closure}('')
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-settings.php(578): do_action('plugins_loaded')
+#6 /var/www/html/wp-config.php(141): require_once('/var/www/html/w...')
+#7 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#8 /var/www/html/wp-admin/admin.php(35): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-admin/index.php(10): require_once('/var/www/html/w...')
+#10 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php on line 51
+[23-Sep-2025 12:55:27 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[23-Sep-2025 12:55:27 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[23-Sep-2025 12:55:27 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[23-Sep-2025 12:55:27 UTC] PHP Fatal error:  Uncaught Error: Class "Meduzean\EanManager\Services\Email_Service" not found in /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php:51
+Stack trace:
+#0 /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php(43): Meduzean\EanManager\Core\Plugin->__construct()
+#1 /var/www/html/wp-content/plugins/meduzean/meduzean.php(71): Meduzean\EanManager\Core\Plugin::instance()
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): {closure}('')
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-settings.php(578): do_action('plugins_loaded')
+#6 /var/www/html/wp-config.php(141): require_once('/var/www/html/w...')
+#7 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#8 /var/www/html/wp-admin/admin.php(35): require_once('/var/www/html/w...')
+#9 /var/www/html/wp-admin/index.php(10): require_once('/var/www/html/w...')
+#10 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php on line 51
