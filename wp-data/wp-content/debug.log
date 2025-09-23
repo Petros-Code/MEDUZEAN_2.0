@@ -440,3 +440,11 @@ Stack trace:
 [23-Sep-2025 14:27:44 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
 [23-Sep-2025 14:27:44 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
 [23-Sep-2025 14:27:44 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[23-Sep-2025 14:29:44 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[23-Sep-2025 14:29:44 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[23-Sep-2025 14:29:44 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[23-Sep-2025 14:29:44 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[23-Sep-2025 14:29:44 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[23-Sep-2025 14:29:44 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[23-Sep-2025 14:29:44 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[23-Sep-2025 14:29:44 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
