@@ -27,26 +27,10 @@ class Assets {
 	public function enqueue_menu_icon_styles() {
 		// Charger le CSS pour l'icône du menu sur toutes les pages admin
 		wp_add_inline_style('wp-admin', '
-			#adminmenu .toplevel_page_meduzean-ean .wp-menu-image {
-				width: 20px;
-				height: 20px;
-				background-size: 20px 20px;
-				background-position: center;
-				background-repeat: no-repeat;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-			}
 			#adminmenu .toplevel_page_meduzean-ean .wp-menu-image img {
-				width: 20px;
-				height: 20px;
-				padding: 0;
-				margin: 0;
-				display: block;
-			}
-			#adminmenu .toplevel_page_meduzean-ean .wp-menu-name {
-				line-height: 20px;
-				vertical-align: middle;
+				width: 1.2em;
+				height: 1.2em;
+				padding: 0.2em;
 			}
 		');
 	}
