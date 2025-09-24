@@ -49,6 +49,7 @@ class Admin {
 		// Enregistrement des options par défaut
 		add_option('meduzean_low_stock_threshold', 10);
 		add_option('meduzean_notification_email', get_option('admin_email'));
+		add_option('meduzean_notification_email_2', '');
 		add_option('meduzean_auto_assign', 'no');
 	}
 

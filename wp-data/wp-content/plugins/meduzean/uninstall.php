@@ -25,7 +25,9 @@ $wpdb->query( "DROP TABLE IF EXISTS {$table_name}" );
 
 // Delete options
 delete_option( MEDUZEAN_DB_VERSION_OPTION );
-// Add here any other plugin options when created, e.g.:
-// delete_option( 'meduzean_settings' );
+delete_option( 'meduzean_low_stock_threshold' );
+delete_option( 'meduzean_notification_email' );
+delete_option( 'meduzean_notification_email_2' );
+delete_option( 'meduzean_auto_assign' );
 
 

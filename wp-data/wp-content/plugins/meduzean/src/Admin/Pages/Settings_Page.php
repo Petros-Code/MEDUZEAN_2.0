@@ -18,6 +18,7 @@ class Settings_Page {
         // Récupération des options
         $threshold = get_option('meduzean_low_stock_threshold', 10);
         $email = get_option('meduzean_notification_email', get_option('admin_email'));
+        $email2 = get_option('meduzean_notification_email_2', '');
         $auto_assign = get_option('meduzean_auto_assign', 'no');
 
         ?>
@@ -41,12 +42,23 @@ class Settings_Page {
                     
                     <tr>
                         <th scope="row">
-                            <label for="notification_email"><?php _e('Email de notification', 'meduzean'); ?></label>
+                            <label for="notification_email"><?php _e('Email de notification principal', 'meduzean'); ?></label>
                         </th>
                         <td>
                             <input type="email" id="notification_email" name="notification_email" 
                                    value="<?php echo esc_attr($email); ?>" class="regular-text">
-                            <p class="description"><?php _e('Adresse email pour recevoir les alertes de stock bas.', 'meduzean'); ?></p>
+                            <p class="description"><?php _e('Adresse email principale pour recevoir les alertes de stock bas.', 'meduzean'); ?></p>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <th scope="row">
+                            <label for="notification_email_2"><?php _e('Email de notification secondaire', 'meduzean'); ?></label>
+                        </th>
+                        <td>
+                            <input type="email" id="notification_email_2" name="notification_email_2" 
+                                   value="<?php echo esc_attr($email2); ?>" class="regular-text">
+                            <p class="description"><?php _e('Adresse email secondaire (optionnelle) pour recevoir les alertes en copie.', 'meduzean'); ?></p>
                         </td>
                     </tr>
                     
@@ -97,6 +109,7 @@ class Settings_Page {
 
         $threshold = intval($_POST['low_stock_threshold']);
         $email = sanitize_email($_POST['notification_email']);
+        $email2 = sanitize_email($_POST['notification_email_2']);
         $auto_assign = sanitize_text_field($_POST['auto_assign']);
 
         if ($threshold < 1) {
@@ -105,13 +118,21 @@ class Settings_Page {
 
         if (!is_email($email)) {
             add_action('admin_notices', function() {
-                echo '<div class="notice notice-error is-dismissible"><p>' . __('Adresse email invalide.', 'meduzean') . '</p></div>';
+                echo '<div class="notice notice-error is-dismissible"><p>' . __('Adresse email principale invalide.', 'meduzean') . '</p></div>';
+            });
+            return;
+        }
+
+        if (!empty($email2) && !is_email($email2)) {
+            add_action('admin_notices', function() {
+                echo '<div class="notice notice-error is-dismissible"><p>' . __('Adresse email secondaire invalide.', 'meduzean') . '</p></div>';
             });
             return;
         }
 
         update_option('meduzean_low_stock_threshold', $threshold);
         update_option('meduzean_notification_email', $email);
+        update_option('meduzean_notification_email_2', $email2);
         update_option('meduzean_auto_assign', $auto_assign);
 
         add_action('admin_notices', function() {
