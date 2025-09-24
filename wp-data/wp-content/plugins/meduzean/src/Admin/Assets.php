@@ -23,6 +23,22 @@ class Assets {
 			true
 		);
 	}
+	
+	public function enqueue_menu_icon_styles() {
+		// Charger le CSS pour l'icône du menu sur toutes les pages admin
+		wp_add_inline_style('wp-admin', '
+			#adminmenu .toplevel_page_meduzean-ean .wp-menu-image img {
+				width: 20px;
+				height: 20px;
+				padding: 0;
+			}
+			#adminmenu .toplevel_page_meduzean-ean .wp-menu-image {
+				background-size: 20px 20px;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+		');
+	}
 }
 
 

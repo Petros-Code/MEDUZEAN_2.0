@@ -63,6 +63,7 @@ class Plugin {
 
         // assets
         add_action( 'admin_enqueue_scripts', [ $this->assets, 'enqueue_admin_assets' ] );
+        add_action( 'admin_enqueue_scripts', [ $this->assets, 'enqueue_menu_icon_styles' ] );
 
         // rest
         add_action( 'rest_api_init', [ $this->rest, 'register_routes' ] );

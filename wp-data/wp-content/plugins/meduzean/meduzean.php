@@ -73,3 +73,11 @@ add_action('plugins_loaded', function () {
     $plugin = \Meduzean\EanManager\Core\Plugin::instance();
     $plugin->register_hooks();
 });
+
+// === Personnalisation de l'icône du plugin ===
+add_filter('plugin_row_meta', function($plugin_meta, $plugin_file) {
+    if (plugin_basename(MEDUZEAN_PLUGIN_FILE) === $plugin_file) {
+        $plugin_meta[] = '<a href="' . admin_url('admin.php?page=meduzean-ean') . '">' . __('Gérer les EAN', 'meduzean') . '</a>';
+    }
+    return $plugin_meta;
+}, 10, 2);

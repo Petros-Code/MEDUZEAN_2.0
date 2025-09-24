@@ -25,7 +25,7 @@ class Admin {
 			'manage_options',
 			'meduzean-ean',
 			[ $this, 'render_list_page' ],
-			'dashicons-barcode'
+			MEDUZEAN_PLUGIN_URL . 'assets/icon.png'
 		);
 		add_submenu_page(
 			'meduzean-ean',
