@@ -3,6 +3,7 @@ namespace Meduzean\EanManager\Admin\Pages;
 
 use Meduzean\EanManager\DB\Ean_Table;
 use Meduzean\EanManager\Helpers\Validator;
+use Meduzean\EanManager\Helpers\SimpleXLSX;
 
 defined('ABSPATH') || exit;
 
@@ -31,7 +32,9 @@ class Ean_Import_Page {
             
             <div class="card">
                 <h2><?php _e('Instructions', 'meduzean'); ?></h2>
-                <p><?php _e('Vous pouvez importer des codes EAN via un fichier CSV. Le fichier doit contenir une colonne "ean" avec les codes EAN (13 chiffres).', 'meduzean'); ?></p>
+                <p><?php _e('Vous pouvez importer des codes EAN via un fichier CSV ou XLSX.', 'meduzean'); ?></p>
+                <p><strong><?php _e('Format CSV:', 'meduzean'); ?></strong> <?php _e('Le fichier doit contenir une colonne "ean" avec les codes EAN (13 chiffres).', 'meduzean'); ?></p>
+                <p><strong><?php _e('Format XLSX:', 'meduzean'); ?></strong> <?php _e('Les codes EAN doivent être dans la première colonne (A), à partir de la ligne 3.', 'meduzean'); ?></p>
                 <p><strong><?php _e('Format CSV attendu:', 'meduzean'); ?></strong></p>
                 <pre>ean
 1234567890123
@@ -39,17 +42,17 @@ class Ean_Import_Page {
             </div>
 
             <div class="card">
-                <h2><?php _e('Importer un fichier CSV', 'meduzean'); ?></h2>
+                <h2><?php _e('Importer un fichier CSV ou XLSX', 'meduzean'); ?></h2>
                 <form method="post" enctype="multipart/form-data">
                     <?php wp_nonce_field('meduzean_import_ean', 'meduzean_import_nonce'); ?>
                     <table class="form-table">
                         <tr>
                             <th scope="row">
-                                <label for="ean_file"><?php _e('Fichier CSV', 'meduzean'); ?></label>
+                                <label for="ean_file"><?php _e('Fichier CSV ou XLSX', 'meduzean'); ?></label>
                             </th>
                             <td>
-                                <input type="file" id="ean_file" name="ean_file" accept=".csv" required>
-                                <p class="description"><?php _e('Sélectionnez un fichier CSV contenant les codes EAN.', 'meduzean'); ?></p>
+                                <input type="file" id="ean_file" name="ean_file" accept=".csv,.xlsx" required>
+                                <p class="description"><?php _e('Sélectionnez un fichier CSV ou XLSX contenant les codes EAN.', 'meduzean'); ?></p>
                             </td>
                         </tr>
                     </table>
@@ -152,45 +155,29 @@ class Ean_Import_Page {
         }
 
         $file = $_FILES['ean_file'];
-        $file_type = wp_check_filetype($file['name'], ['csv' => 'text/csv']);
+        $file_type = wp_check_filetype($file['name'], [
+            'csv' => 'text/csv',
+            'xlsx' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        ]);
         
-        if (!$file_type['ext']) {
-            $this->add_admin_notice('error', __('Le fichier doit être un CSV.', 'meduzean'));
+        if (!$file_type['ext'] || !in_array($file_type['ext'], ['csv', 'xlsx'])) {
+            $this->add_admin_notice('error', __('Le fichier doit être un CSV ou XLSX.', 'meduzean'));
             return;
         }
 
-        $csv_data = array_map('str_getcsv', file($file['tmp_name']));
-        if (empty($csv_data) || count($csv_data) < 2) {
-            $this->add_admin_notice('error', __('Le fichier CSV est vide ou invalide.', 'meduzean'));
-            return;
+        // Traiter selon le type de fichier
+        if ($file_type['ext'] === 'xlsx') {
+            $eans = $this->process_xlsx_file($file['tmp_name']);
+        } else {
+            $eans = $this->process_csv_file($file['tmp_name']);
         }
-
-        // Vérifier l'en-tête
-        $headers = array_map('strtolower', $csv_data[0]);
-        $ean_column_index = array_search('ean', $headers);
         
-        if ($ean_column_index === false) {
-            $this->add_admin_notice('error', __('Le fichier CSV doit contenir une colonne "ean".', 'meduzean'));
-            return;
+        if ($eans === false) {
+            return; // L'erreur a déjà été affichée dans la méthode
         }
-
-        // Traiter les données
-        $eans = [];
-        $errors = [];
         
-        for ($i = 1; $i < count($csv_data); $i++) {
-            $row = $csv_data[$i];
-            if (isset($row[$ean_column_index])) {
-                $ean = trim($row[$ean_column_index]);
-                if (!empty($ean)) {
-                    if (Validator::is_valid_ean13($ean)) {
-                        $eans[] = $ean;
-                    } else {
-                        $errors[] = sprintf(__('Code EAN invalide à la ligne %d: %s', 'meduzean'), $i + 1, $ean);
-                    }
-                }
-            }
-        }
+        $errors = $eans['errors'];
+        $eans = $eans['eans'];
 
         if (!empty($errors)) {
             $error_message = '<strong>' . __('Erreurs de validation:', 'meduzean') . '</strong><br>' . implode('<br>', $errors);
@@ -399,5 +386,82 @@ class Ean_Import_Page {
             $info_message .= __('Aucun code EAN valide trouvé dans la saisie.', 'meduzean');
             $this->add_admin_notice('info', $info_message);
         }
+    }
+
+    /**
+     * Traite un fichier CSV
+     */
+    private function process_csv_file($file_path) {
+        $csv_data = array_map('str_getcsv', file($file_path));
+        if (empty($csv_data) || count($csv_data) < 2) {
+            $this->add_admin_notice('error', __('Le fichier CSV est vide ou invalide.', 'meduzean'));
+            return false;
+        }
+
+        // Vérifier l'en-tête
+        $headers = array_map('strtolower', $csv_data[0]);
+        $ean_column_index = array_search('ean', $headers);
+        
+        if ($ean_column_index === false) {
+            $this->add_admin_notice('error', __('Le fichier CSV doit contenir une colonne "ean".', 'meduzean'));
+            return false;
+        }
+
+        // Traiter les données
+        $eans = [];
+        $errors = [];
+        
+        for ($i = 1; $i < count($csv_data); $i++) {
+            $row = $csv_data[$i];
+            if (isset($row[$ean_column_index])) {
+                $ean = trim($row[$ean_column_index]);
+                if (!empty($ean)) {
+                    if (Validator::is_valid_ean13($ean)) {
+                        $eans[] = $ean;
+                    } else {
+                        $errors[] = sprintf(__('Code EAN invalide à la ligne %d: %s', 'meduzean'), $i + 1, $ean);
+                    }
+                }
+            }
+        }
+
+        return ['eans' => $eans, 'errors' => $errors];
+    }
+
+    /**
+     * Traite un fichier XLSX
+     */
+    private function process_xlsx_file($file_path) {
+        $xlsx = SimpleXLSX::parse($file_path);
+        
+        if (!$xlsx) {
+            $this->add_admin_notice('error', __('Impossible de lire le fichier XLSX.', 'meduzean'));
+            return false;
+        }
+
+        // Extraire les données de la première colonne à partir de la ligne 3
+        $raw_eans = $xlsx->getFirstColumnFromRow3();
+        
+        if (empty($raw_eans)) {
+            $this->add_admin_notice('error', __('Aucune donnée trouvée dans la première colonne du fichier XLSX (à partir de la ligne 3).', 'meduzean'));
+            return false;
+        }
+
+        // Valider les EAN
+        $eans = [];
+        $errors = [];
+        
+        foreach ($raw_eans as $index => $ean) {
+            $ean = trim($ean);
+            if (!empty($ean)) {
+                if (Validator::is_valid_ean13($ean)) {
+                    $eans[] = $ean;
+                } else {
+                    $errors[] = sprintf(__('Code EAN invalide à la ligne %d: %s', 'meduzean'), $index + 3, $ean);
+                }
+            }
+        }
+
+        return ['eans' => $eans, 'errors' => $errors];
     }
 }
