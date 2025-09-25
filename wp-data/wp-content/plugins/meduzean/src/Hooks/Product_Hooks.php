@@ -20,9 +20,9 @@ class Product_Hooks {
         // Hook WordPress universel - Se déclenche pour tous les post_types
         add_action('wp_insert_post', [$this, 'on_post_created'], 10, 3);
 
-        // Hook WooCommerce spécifique (si WooCommerce est actif)
+        // Hook WooCommerce spécifique - Se déclenche après sauvegarde du produit
         if (function_exists('WC')) {
-            add_action('woocommerce_new_product', [$this, 'on_woocommerce_product_created'], 10, 1);
+            add_action('woocommerce_process_product_meta', [$this, 'on_woocommerce_product_saved'], 10, 1);
         }
 
         // Hook de suppression de produit
@@ -34,55 +34,81 @@ class Product_Hooks {
      * Se déclenche à la création de tout post WordPress
      */
     public function on_post_created($post_id, $post, $update) {
-        // Ignorer les mises à jour (on veut seulement les nouveaux posts)
-        if ($update) {
-            return;
-        }
-
-        // Ignorer les brouillons et autres statuts
-        if ($post->post_status !== 'publish') {
-            return;
-        }
-
+        // NOUVELLE LOGIQUE : Association seulement à la publication
+        
         // Vérifier que c'est un produit
         if (!$this->is_product_post($post)) {
             return;
         }
 
-        // Tenter l'association automatique
+        // Vérifier que c'est une création (pas une mise à jour)
+        if ($update) {
+            // Si c'est une mise à jour, vérifier si on passe de brouillon à publié
+            $old_status = get_post_meta($post_id, '_wp_old_status', true);
+            if ($old_status === 'publish' || $post->post_status !== 'publish') {
+                return; // Pas une première publication
+            }
+        }
+
+        // Vérifier que le produit est maintenant publié
+        if ($post->post_status !== 'publish') {
+            return;
+        }
+
+        // Vérifier qu'il n'a pas déjà un EAN
+        $existing_ean = get_post_meta($post_id, '_ean', true);
+        if (!empty($existing_ean)) {
+            return; // Déjà un EAN
+        }
+
+        // ASSOCIATION AUTOMATIQUE : Prendre le premier EAN disponible
         $assigned_ean = $this->association_service->auto_assign_ean_to_product($post_id);
         
         if ($assigned_ean) {
-            // Optionnel : Ajouter une notice admin pour informer l'utilisateur
             $this->add_admin_notice(sprintf(
-                __('EAN %s automatiquement associé au produit "%s"', 'meduzean'),
+                __('✅ EAN %s automatiquement associé au produit "%s" lors de sa publication', 'meduzean'),
                 $assigned_ean,
                 $post->post_title
             ), 'success');
+        } else {
+            $this->add_admin_notice(sprintf(
+                __('⚠️ Aucun EAN disponible pour le produit "%s" - Ajoutez des codes EAN dans EAN Manager', 'meduzean'),
+                $post->post_title
+            ), 'warning');
         }
     }
 
     /**
-     * Gestionnaire pour woocommerce_new_product
-     * Hook spécifique WooCommerce plus fiable
+     * Gestionnaire pour woocommerce_process_product_meta
+     * Se déclenche quand on clique "Publier" ou "Mettre à jour" dans WooCommerce
      */
-    public function on_woocommerce_product_created($product_id) {
-        // Vérifier que le produit n'a pas déjà été traité par wp_insert_post
-        $existing_ean = get_post_meta($product_id, '_ean', true);
-        if (!empty($existing_ean)) {
-            return; // Déjà traité
+    public function on_woocommerce_product_saved($product_id) {
+        // Vérifier que le produit est publié
+        $product = get_post($product_id);
+        if (!$product || $product->post_status !== 'publish') {
+            return;
         }
 
-        // Tenter l'association automatique
+        // Vérifier qu'il n'a pas déjà un EAN
+        $existing_ean = get_post_meta($product_id, '_ean', true);
+        if (!empty($existing_ean)) {
+            return; // Déjà un EAN
+        }
+
+        // ASSOCIATION AUTOMATIQUE : Prendre le premier EAN disponible
         $assigned_ean = $this->association_service->auto_assign_ean_to_product($product_id);
         
         if ($assigned_ean) {
-            $product_title = get_the_title($product_id);
             $this->add_admin_notice(sprintf(
-                __('EAN %s automatiquement associé au produit WooCommerce "%s"', 'meduzean'),
+                __('✅ EAN %s automatiquement associé au produit WooCommerce "%s"', 'meduzean'),
                 $assigned_ean,
-                $product_title
+                $product->post_title
             ), 'success');
+        } else {
+            $this->add_admin_notice(sprintf(
+                __('⚠️ Aucun EAN disponible pour le produit "%s" - Ajoutez des codes EAN dans EAN Manager', 'meduzean'),
+                $product->post_title
+            ), 'warning');
         }
     }
 
