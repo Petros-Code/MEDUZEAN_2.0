@@ -3,9 +3,11 @@ namespace Meduzean\EanManager\Core;
 
 use Meduzean\EanManager\Admin\Admin;
 use Meduzean\EanManager\Admin\Assets;
+use Meduzean\EanManager\Admin\Notice_Manager;
 use Meduzean\EanManager\API\Rest_Controller;
 use Meduzean\EanManager\Cron\Cron_Handler;
 use Meduzean\EanManager\DB\Ean_Table;
+use Meduzean\EanManager\Hooks\Product_Hooks;
 use Meduzean\EanManager\Services\Ean_Service;
 use Meduzean\EanManager\Services\Email_Service;
 
@@ -38,6 +40,12 @@ class Plugin {
     /** @var Email_Service */
     public $email;
 
+    /** @var Product_Hooks */
+    public $product_hooks;
+
+    /** @var Notice_Manager */
+    public $notice_manager;
+
     public static function instance() {
         if ( null === self::$instance ) {
             self::$instance = new self();
@@ -54,6 +62,8 @@ class Plugin {
         $this->admin = new Admin( $this->service );
         $this->assets = new Assets();
         $this->rest = new Rest_Controller( $this->service );
+        $this->product_hooks = new Product_Hooks();
+        $this->notice_manager = new Notice_Manager();
     }
 
     public function register_hooks() {
@@ -70,5 +80,8 @@ class Plugin {
 
         // cron action hook (called by wp-cron)
         add_action( 'meduzean_ean_manager_daily_check', [ $this->cron, 'daily_check' ] );
+
+        // product association hooks
+        $this->product_hooks->register_hooks();
     }
 }
