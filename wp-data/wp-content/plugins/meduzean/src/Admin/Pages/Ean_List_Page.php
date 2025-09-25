@@ -28,9 +28,11 @@ class Ean_List_Page {
         $offset = ($page - 1) * $per_page;
         $availability = isset($_GET['availability']) ? sanitize_text_field($_GET['availability']) : '';
         $search = isset($_GET['s']) ? sanitize_text_field($_GET['s']) : '';
+        $orderby = isset($_GET['orderby']) ? sanitize_text_field($_GET['orderby']) : 'ean_add_date';
+        $order = isset($_GET['order']) ? sanitize_text_field($_GET['order']) : 'DESC';
 
         // Récupération des données
-        $eans = $this->table->get_all($per_page, $offset, 'ean_add_date', 'DESC', $availability);
+        $eans = $this->table->get_all($per_page, $offset, $orderby, $order, $availability);
         $total = $this->table->count_all($availability);
 
         ?>
@@ -46,12 +48,27 @@ class Ean_List_Page {
                 <div class="alignleft actions">
                     <form method="get" style="display: inline-block;">
                         <input type="hidden" name="page" value="meduzean-ean">
+                        
+                        <!-- Filtre par statut -->
                         <select name="availability">
                             <option value=""><?php _e('Tous les EAN', 'meduzean'); ?></option>
                             <option value="available" <?php selected($availability, 'available'); ?>><?php _e('Disponibles', 'meduzean'); ?></option>
                             <option value="used" <?php selected($availability, 'used'); ?>><?php _e('Utilisés', 'meduzean'); ?></option>
                         </select>
-                        <input type="submit" class="button" value="<?php _e('Filtrer', 'meduzean'); ?>">
+                        
+                        <!-- Tri par -->
+                        <select name="orderby">
+                            <option value="ean_add_date" <?php selected($orderby, 'ean_add_date'); ?>><?php _e('Date d\'ajout', 'meduzean'); ?></option>
+                            <option value="association_date" <?php selected($orderby, 'association_date'); ?>><?php _e('Date d\'association', 'meduzean'); ?></option>
+                        </select>
+                        
+                        <!-- Direction du tri -->
+                        <select name="order">
+                            <option value="DESC" <?php selected($order, 'DESC'); ?>><?php _e('↓ Décroissant', 'meduzean'); ?></option>
+                            <option value="ASC" <?php selected($order, 'ASC'); ?>><?php _e('↑ Croissant', 'meduzean'); ?></option>
+                        </select>
+                        
+                        <input type="submit" class="button" value="<?php _e('Appliquer', 'meduzean'); ?>">
                     </form>
                 </div>
             </div>
@@ -64,9 +81,25 @@ class Ean_List_Page {
                             <input type="checkbox" id="cb-select-all-1">
                         </th>
                         <th scope="col" class="manage-column"><?php _e('EAN', 'meduzean'); ?></th>
-                        <th scope="col" class="manage-column"><?php _e('Date d\'ajout', 'meduzean'); ?></th>
+                        <th scope="col" class="manage-column <?php echo $orderby === 'ean_add_date' ? 'sorted ' . strtolower($order) : 'sortable desc'; ?>">
+                            <a href="<?php echo $this->get_sort_url('ean_add_date', $orderby, $order, $availability); ?>">
+                                <?php _e('Date d\'ajout', 'meduzean'); ?>
+                                <span class="sorting-indicators">
+                                    <span class="sorting-indicator asc" aria-hidden="true"></span>
+                                    <span class="sorting-indicator desc" aria-hidden="true"></span>
+                                </span>
+                            </a>
+                        </th>
                         <th scope="col" class="manage-column"><?php _e('Produit associé', 'meduzean'); ?></th>
-                        <th scope="col" class="manage-column"><?php _e('Date d\'association', 'meduzean'); ?></th>
+                        <th scope="col" class="manage-column <?php echo $orderby === 'association_date' ? 'sorted ' . strtolower($order) : 'sortable desc'; ?>">
+                            <a href="<?php echo $this->get_sort_url('association_date', $orderby, $order, $availability); ?>">
+                                <?php _e('Date d\'association', 'meduzean'); ?>
+                                <span class="sorting-indicators">
+                                    <span class="sorting-indicator asc" aria-hidden="true"></span>
+                                    <span class="sorting-indicator desc" aria-hidden="true"></span>
+                                </span>
+                            </a>
+                        </th>
                         <th scope="col" class="manage-column"><?php _e('Actions', 'meduzean'); ?></th>
                     </tr>
                 </thead>
@@ -117,15 +150,20 @@ class Ean_List_Page {
                 <div class="tablenav bottom">
                     <div class="tablenav-pages">
                         <?php
-                        $pagination = paginate_links([
-                            'base' => add_query_arg('paged', '%#%'),
+                        $pagination_args = [
+                            'base' => add_query_arg([
+                                'availability' => $availability,
+                                'orderby' => $orderby,
+                                'order' => $order,
+                                'paged' => '%#%'
+                            ]),
                             'format' => '',
                             'prev_text' => __('&laquo;'),
                             'next_text' => __('&raquo;'),
                             'total' => ceil($total / $per_page),
                             'current' => $page
-                        ]);
-                        echo $pagination;
+                        ];
+                        echo paginate_links($pagination_args);
                         ?>
                     </div>
                 </div>
@@ -161,5 +199,31 @@ class Ean_List_Page {
                 });
             }
         }
+    }
+
+    /**
+     * Génère l'URL pour le tri des colonnes
+     */
+    private function get_sort_url($column, $current_orderby, $current_order, $availability) {
+        // Si on clique sur la même colonne, inverser l'ordre
+        if ($current_orderby === $column) {
+            $new_order = ($current_order === 'ASC') ? 'DESC' : 'ASC';
+        } else {
+            // Par défaut, trier par date décroissant
+            $new_order = 'DESC';
+        }
+
+        $args = [
+            'page' => 'meduzean-ean',
+            'orderby' => $column,
+            'order' => $new_order
+        ];
+
+        // Préserver le filtre de disponibilité s'il existe
+        if (!empty($availability)) {
+            $args['availability'] = $availability;
+        }
+
+        return admin_url('admin.php?' . http_build_query($args));
     }
 }
