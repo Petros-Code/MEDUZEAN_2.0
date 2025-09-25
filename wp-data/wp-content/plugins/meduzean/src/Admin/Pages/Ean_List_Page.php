@@ -150,8 +150,7 @@ class Ean_List_Page {
                                 </td>
                                 <td>
                                     <a href="<?php echo wp_nonce_url(admin_url('admin.php?page=meduzean-ean&action=delete&ean_id=' . $ean['id']), 'delete_ean_' . $ean['id']); ?>" 
-                                       class="button button-small" 
-                                       onclick="return confirm('<?php _e('Êtes-vous sûr de vouloir supprimer ce code EAN ?', 'meduzean'); ?>')">
+                                       class="button button-small">
                                         <?php _e('Supprimer', 'meduzean'); ?>
                                     </a>
                                 </td>
