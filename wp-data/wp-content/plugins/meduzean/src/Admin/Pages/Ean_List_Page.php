@@ -34,6 +34,7 @@ class Ean_List_Page {
         // Récupération des données
         $eans = $this->table->get_all($per_page, $offset, $orderby, $order, $availability);
         $total = $this->table->count_all($availability);
+        $total_all_eans = $this->table->count_all(); // Total sans filtre
 
         ?>
         <div class="wrap">
@@ -70,6 +71,21 @@ class Ean_List_Page {
                         
                         <input type="submit" class="button" value="<?php _e('Appliquer', 'meduzean'); ?>">
                     </form>
+                </div>
+                
+                <!-- Statistiques -->
+                <div class="alignright actions">
+                    <span class="displaying-num">
+                        <?php
+                        if ($availability === 'available') {
+                            printf(__('%d EAN disponibles sur %d total', 'meduzean'), $total, $total_all_eans);
+                        } elseif ($availability === 'used') {
+                            printf(__('%d EAN utilisés sur %d total', 'meduzean'), $total, $total_all_eans);
+                        } else {
+                            printf(__('%d EAN au total', 'meduzean'), $total_all_eans);
+                        }
+                        ?>
+                    </span>
                 </div>
             </div>
 
@@ -148,6 +164,21 @@ class Ean_List_Page {
             <!-- Pagination -->
             <?php if ($total > $per_page): ?>
                 <div class="tablenav bottom">
+                    <div class="alignleft actions">
+                        <span class="displaying-num">
+                            <?php
+                            $start = ($page - 1) * $per_page + 1;
+                            $end = min($page * $per_page, $total);
+                            if ($availability === 'available') {
+                                printf(__('Affichage de %1$d à %2$d sur %3$d EAN disponibles (%4$d total)', 'meduzean'), $start, $end, $total, $total_all_eans);
+                            } elseif ($availability === 'used') {
+                                printf(__('Affichage de %1$d à %2$d sur %3$d EAN utilisés (%4$d total)', 'meduzean'), $start, $end, $total, $total_all_eans);
+                            } else {
+                                printf(__('Affichage de %1$d à %2$d sur %3$d EAN', 'meduzean'), $start, $end, $total);
+                            }
+                            ?>
+                        </span>
+                    </div>
                     <div class="tablenav-pages">
                         <?php
                         $pagination_args = [
@@ -165,6 +196,25 @@ class Ean_List_Page {
                         ];
                         echo paginate_links($pagination_args);
                         ?>
+                    </div>
+                </div>
+            <?php else: ?>
+                <!-- Statistiques sans pagination -->
+                <div class="tablenav bottom">
+                    <div class="alignleft actions">
+                        <span class="displaying-num">
+                            <?php
+                            if ($total > 0) {
+                                if ($availability === 'available') {
+                                    printf(__('%d EAN disponibles sur %d total', 'meduzean'), $total, $total_all_eans);
+                                } elseif ($availability === 'used') {
+                                    printf(__('%d EAN utilisés sur %d total', 'meduzean'), $total, $total_all_eans);
+                                } else {
+                                    printf(__('%d EAN au total', 'meduzean'), $total_all_eans);
+                                }
+                            }
+                            ?>
+                        </span>
                     </div>
                 </div>
             <?php endif; ?>
