@@ -5,6 +5,10 @@
  * Source: github.com/shuchkin/simplexlsx
  */
 
+namespace Meduzean\EanManager\Helpers;
+
+use ZipArchive;
+
 defined('ABSPATH') || exit;
 
 class SimpleXLSX {
