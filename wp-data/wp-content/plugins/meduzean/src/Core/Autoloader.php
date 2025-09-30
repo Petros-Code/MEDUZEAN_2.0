@@ -34,6 +34,10 @@ class Autoloader
         
         if (file_exists($file)) {
             require_once $file;
+        } else {
+            if (defined('WP_DEBUG') && WP_DEBUG) {
+                error_log("[Meduzean Autoload] File not found: $file");
+            }
         }
     }
 }

@@ -11,20 +11,29 @@
 defined('ABSPATH') || exit;
 
 use Meduzean\EanManager\Core\Constants;
-use Meduzean\EanManager\Core\Autoloader;
 use Meduzean\EanManager\Core\Bootstrap;
 use Meduzean\EanManager\Core\Plugin;
 use Meduzean\EanManager\DB\Ean_Table;
 
+// === Autoloader simple et robuste ===
+spl_autoload_register(function ($class) {
+    $prefix = 'Meduzean\\EanManager\\';
+    $base_dir = plugin_dir_path(__FILE__) . 'src/';
+
+    if (strpos($class, $prefix) !== 0) {
+        return;
+    }
+
+    $relative_class = substr($class, strlen($prefix));
+    $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
+
+    if (file_exists($file)) {
+        require_once $file;
+    }
+});
+
 // === Initialisation des constantes ===
 Constants::setPluginFile(__FILE__);
-
-// === Configuration de l'autoloader ===
-$autoloader = new Autoloader(
-    Constants::NAMESPACE,
-    Constants::getPluginDir() . 'src/'
-);
-$autoloader->register();
 
 // === Initialisation du bootstrap ===
 $bootstrap = new Bootstrap(new Ean_Table());
