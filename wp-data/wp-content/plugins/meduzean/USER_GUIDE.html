@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Utilisateur - MEDUZEAN EAN Manager</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #7f8c8d;
+            margin-top: 25px;
+        }
+        .highlight {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .warning {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .success {
+            background-color: #d4edda;
+            padding: 15px;
+            border-left: 4px solid #28a745;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .step {
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #dee2e6;
+        }
+        .step-number {
+            background-color: #3498db;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin: 8px 0;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .feature-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        .feature-card h4 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .toc {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .toc li {
+            margin: 5px 0;
+        }
+        .toc a {
+            text-decoration: none;
+            color: #3498db;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        code {
+            background-color: #f1f3f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        .screenshot {
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📦 Guide Utilisateur - MEDUZEAN EAN Manager</h1>
+        
+        <div class="highlight">
+            <strong>Bienvenue !</strong> Ce guide vous accompagne dans l'utilisation du module MEDUZEAN pour gérer vos codes EAN (European Article Number) sur votre site WordPress.
+        </div>
+
+        <div class="toc">
+            <h3>📋 Table des matières</h3>
+            <ul>
+                <li><a href="#introduction">1. Introduction</a></li>
+                <li><a href="#premiers-pas">2. Premiers pas</a></li>
+                <li><a href="#ajouter-ean">3. Ajouter des codes EAN</a></li>
+                <li><a href="#gerer-ean">4. Gérer vos codes EAN</a></li>
+                <li><a href="#alertes">5. Système d'alertes</a></li>
+                <li><a href="#parametres">6. Paramètres</a></li>
+                <li><a href="#faq">7. Questions fréquentes</a></li>
+            </ul>
+        </div>
+
+        <h2 id="introduction">1. 🎯 Introduction</h2>
+        
+        <p><strong>MEDUZEAN EAN Manager</strong> est un module WordPress qui vous permet de :</p>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>📥 Importer des codes EAN</h4>
+                <p>Ajoutez vos codes EAN manuellement, par fichier CSV ou Excel (XLSX)</p>
+            </div>
+            <div class="feature-card">
+                <h4>📊 Gérer votre stock</h4>
+                <p>Visualisez et gérez tous vos codes EAN disponibles et assignés</p>
+            </div>
+            <div class="feature-card">
+                <h4>🔔 Alertes automatiques</h4>
+                <p>Recevez des notifications par email quand votre stock est bas</p>
+            </div>
+            <div class="feature-card">
+                <h4>🔗 Intégration flexible</h4>
+                <p>Associez vos codes EAN à vos produits de manière simple</p>
+            </div>
+        </div>
+
+        <h2 id="premiers-pas">2. 🚀 Premiers pas</h2>
+
+        <div class="step">
+            <span class="step-number">1</span>
+            <strong>Accédez au module</strong><br>
+            Dans votre administration WordPress, allez dans <code>Codes EAN</code> dans le menu principal.
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <strong>Configurez les paramètres</strong><br>
+            Rendez-vous dans <code>Codes EAN > Paramètres</code> pour configurer vos alertes email.
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span>
+            <strong>Importez vos premiers codes</strong><br>
+            Utilisez <code>Codes EAN > Importer EAN</code> pour ajouter vos codes EAN.
+        </div>
+
+        <h2 id="ajouter-ean">3. 📥 Ajouter des codes EAN</h2>
+
+        <h3>3.1 Ajout manuel</h3>
+        <div class="step">
+            <span class="step-number">1</span>
+            Allez dans <code>Codes EAN > Importer EAN</code>
+        </div>
+        <div class="step">
+            <span class="step-number">2</span>
+            Dans la section "Ajout manuel", saisissez vos codes EAN (un par ligne)
+        </div>
+        <div class="step">
+            <span class="step-number">3</span>
+            Cliquez sur <code>Importer</code>
+        </div>
+
+        <div class="warning">
+            <strong>⚠️ Important :</strong> Les codes EAN doivent contenir exactement 13 chiffres.
+        </div>
+
+        <h3>3.2 Import par fichier CSV</h3>
+        <div class="step">
+            <span class="step-number">1</span>
+            Préparez un fichier CSV avec une colonne nommée <code>ean</code>
+        </div>
+        <div class="step">
+            <span class="step-number">2</span>
+            Dans la section "Import par fichier", sélectionnez votre fichier CSV
+        </div>
+        <div class="step">
+            <span class="step-number">3</span>
+            Cliquez sur <code>Importer le fichier</code>
+        </div>
+
+        <h3>3.3 Import par fichier Excel (XLSX)</h3>
+        <div class="step">
+            <span class="step-number">1</span>
+            Préparez un fichier Excel avec vos codes EAN dans la première colonne
+        </div>
+        <div class="step">
+            <span class="step-number">2</span>
+            Sélectionnez votre fichier XLSX
+        </div>
+        <div class="step">
+            <span class="step-number">3</span>
+            Cliquez sur <code>Importer le fichier</code>
+        </div>
+
+        <div class="success">
+            <strong>✅ Astuce :</strong> Le module détecte automatiquement les doublons et vous informe des erreurs d'import.
+        </div>
+
+        <h2 id="gerer-ean">4. 📊 Gérer vos codes EAN</h2>
+
+        <h3>4.1 Visualiser vos codes</h3>
+        <p>Dans <code>Codes EAN</code>, vous pouvez :</p>
+        <ul>
+            <li><strong>Filtrer</strong> : Voir tous les codes, seulement les disponibles, ou seulement les assignés</li>
+            <li><strong>Rechercher</strong> : Utiliser la barre de recherche pour trouver un code spécifique</li>
+            <li><strong>Trier</strong> : Cliquer sur les en-têtes de colonnes pour trier</li>
+        </ul>
+
+        <h3>4.2 Supprimer un code EAN</h3>
+        <div class="step">
+            <span class="step-number">1</span>
+            Trouvez le code EAN dans la liste
+        </div>
+        <div class="step">
+            <span class="step-number">2</span>
+            Cliquez sur le bouton <code>Supprimer</code> à droite
+        </div>
+        <div class="step">
+            <span class="step-number">3</span>
+            Confirmez la suppression
+        </div>
+
+        <div class="warning">
+            <strong>⚠️ Attention :</strong> La suppression est définitive et ne peut pas être annulée.
+        </div>
+
+        <h2 id="alertes">5. 🔔 Système d'alertes</h2>
+
+        <h3>5.1 Configuration des alertes</h3>
+        <div class="step">
+            <span class="step-number">1</span>
+            Allez dans <code>Codes EAN > Paramètres</code>
+        </div>
+        <div class="step">
+            <span class="step-number">2</span>
+            Définissez le <strong>seuil d'alerte</strong> (nombre minimum de codes disponibles)
+        </div>
+        <div class="step">
+            <span class="step-number">3</span>
+            Saisissez l'<strong>adresse email</strong> qui recevra les alertes
+        </div>
+        <div class="step">
+            <span class="step-number">4</span>
+            Sauvegardez les paramètres
+        </div>
+
+        <h3>5.2 Test des alertes</h3>
+        <p>Vous pouvez tester le système d'alertes en cliquant sur <code>Envoyer un email de test</code> dans les paramètres.</p>
+
+        <div class="success">
+            <strong>✅ Automatique :</strong> Les alertes sont envoyées automatiquement chaque jour si votre stock est en dessous du seuil défini.
+        </div>
+
+        <h2 id="parametres">6. ⚙️ Paramètres</h2>
+
+        <h3>6.1 Paramètres disponibles</h3>
+        <ul>
+            <li><strong>Seuil d'alerte</strong> : Nombre minimum de codes EAN disponibles</li>
+            <li><strong>Email de notification</strong> : Adresse qui recevra les alertes</li>
+            <li><strong>Statistiques</strong> : Vue d'ensemble de votre stock</li>
+        </ul>
+
+        <h3>6.2 Statistiques</h3>
+        <p>La page des paramètres affiche :</p>
+        <ul>
+            <li>Nombre total de codes EAN</li>
+            <li>Nombre de codes disponibles</li>
+            <li>Nombre de codes assignés</li>
+        </ul>
+
+        <h2 id="faq">7. ❓ Questions fréquentes</h2>
+
+        <h3>Q: Que faire si j'ai une erreur lors de l'import ?</h3>
+        <p><strong>R:</strong> Vérifiez que vos codes EAN contiennent exactement 13 chiffres et qu'ils ne sont pas déjà présents dans votre base.</p>
+
+        <h3>Q: Puis-je modifier un code EAN après l'avoir ajouté ?</h3>
+        <p><strong>R:</strong> Non, pour des raisons de sécurité, vous devez supprimer l'ancien code et en ajouter un nouveau.</p>
+
+        <h3>Q: Comment savoir si un code EAN est déjà assigné ?</h3>
+        <p><strong>R:</strong> Dans la liste des codes, la colonne "Produit" indique si un code est assigné ou disponible.</p>
+
+        <h3>Q: Les alertes sont-elles envoyées automatiquement ?</h3>
+        <p><strong>R:</strong> Oui, le système vérifie automatiquement votre stock chaque jour et envoie une alerte si nécessaire.</p>
+
+        <h3>Q: Puis-je importer des codes EAN depuis un autre système ?</h3>
+        <p><strong>R:</strong> Oui, tant que vous pouvez exporter vos codes au format CSV ou Excel, vous pouvez les importer.</p>
+
+        <div class="highlight">
+            <strong>💡 Besoin d'aide ?</strong><br>
+            Si vous rencontrez des difficultés, contactez votre développeur ou consultez la documentation technique pour plus de détails.
+        </div>
+
+        <hr style="margin: 40px 0;">
+        <p style="text-align: center; color: #7f8c8d; font-size: 0.9em;">
+            <strong>MEDUZEAN EAN Manager</strong> - Version 1.2.0 Refacto<br>
+            Guide utilisateur - © 2025
+        </p>
+    </div>
+</body>
+</html>
