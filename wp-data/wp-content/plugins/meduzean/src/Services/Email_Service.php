@@ -1,10 +1,14 @@
 <?php
 namespace Meduzean\EanManager\Services;
 
+use Meduzean\EanManager\Interfaces\EmailServiceInterface;
+
 defined('ABSPATH') || exit;
 
-class Email_Service {
-	public function send_low_stock_alert( $availableCount, $threshold ) {
+class Email_Service implements EmailServiceInterface
+{
+	public function sendLowStockAlert(int $availableCount, int $threshold): bool
+	{
 		$email = get_option('meduzean_notification_email', get_option('admin_email'));
 		$email2 = get_option('meduzean_notification_email_2', '');
 		

@@ -10,74 +10,46 @@
 
 defined('ABSPATH') || exit;
 
-// === Constantes ===
-if (!defined('MEDUZEAN_VERSION')) {
-    define('MEDUZEAN_VERSION', '1.0.0');
-}
-if (!defined('MEDUZEAN_PLUGIN_FILE')) {
-    define('MEDUZEAN_PLUGIN_FILE', __FILE__);
-}
-if (!defined('MEDUZEAN_PLUGIN_DIR')) {
-    define('MEDUZEAN_PLUGIN_DIR', plugin_dir_path(__FILE__));
-}
-if (!defined('MEDUZEAN_PLUGIN_URL')) {
-    define('MEDUZEAN_PLUGIN_URL', plugin_dir_url(__FILE__));
-}
-if (!defined('MEDUZEAN_DB_VERSION_OPTION')) {
-    define('MEDUZEAN_DB_VERSION_OPTION', 'meduzean_db_version');
-}
+use Meduzean\EanManager\Core\Constants;
+use Meduzean\EanManager\Core\Autoloader;
+use Meduzean\EanManager\Core\Bootstrap;
+use Meduzean\EanManager\Core\Plugin;
+use Meduzean\EanManager\DB\Ean_Table;
 
-// === Autoloader PSR-4 simple ===
-spl_autoload_register(function ($class) {
-    $prefix   = 'Meduzean\\EanManager\\';
-    $base_dir = MEDUZEAN_PLUGIN_DIR . 'src/';
+// === Initialisation des constantes ===
+Constants::setPluginFile(__FILE__);
 
-    if (strpos($class, $prefix) !== 0) {
-        return;
-    }
+// === Configuration de l'autoloader ===
+$autoloader = new Autoloader(
+    Constants::NAMESPACE,
+    Constants::getPluginDir() . 'src/'
+);
+$autoloader->register();
 
-    $relative_class = substr($class, strlen($prefix));
-    $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
+// === Initialisation du bootstrap ===
+$bootstrap = new Bootstrap(new Ean_Table());
 
-    if (defined('WP_DEBUG') && WP_DEBUG) {
-        error_log("[Meduzean Autoload] Trying to load $class from $file");
-    }
-
-    if (file_exists($file)) {
-        require_once $file;
-    }
-});
-
-// === Hooks d’activation/désactivation ===
-function meduzean_activate() {
-    // Création / mise à jour de la table
-    $table = new \Meduzean\EanManager\DB\Ean_Table();
-    $table->create_or_update_table();
-
-    // Planification du cron
-    if (!wp_next_scheduled('meduzean_ean_manager_daily_check')) {
-        wp_schedule_event(time(), 'daily', 'meduzean_ean_manager_daily_check');
-    }
-}
-register_activation_hook(MEDUZEAN_PLUGIN_FILE, 'meduzean_activate');
-
-function meduzean_deactivate() {
-    wp_clear_scheduled_hook('meduzean_ean_manager_daily_check');
-}
-register_deactivation_hook(MEDUZEAN_PLUGIN_FILE, 'meduzean_deactivate');
+// === Hooks d'activation/désactivation ===
+register_activation_hook(__FILE__, [$bootstrap, 'activate']);
+register_deactivation_hook(__FILE__, [$bootstrap, 'deactivate']);
 
 // === Chargement du plugin ===
 add_action('plugins_loaded', function () {
-    load_plugin_textdomain('meduzean', false, dirname(plugin_basename(MEDUZEAN_PLUGIN_FILE)) . '/languages');
+    load_plugin_textdomain(
+        Constants::TEXT_DOMAIN,
+        false,
+        dirname(plugin_basename(__FILE__)) . '/languages'
+    );
 
-    $plugin = \Meduzean\EanManager\Core\Plugin::instance();
-    $plugin->register_hooks();
+    $plugin = Plugin::instance();
+    $plugin->registerHooks();
 });
 
 // === Personnalisation de l'icône du plugin ===
 add_filter('plugin_row_meta', function($plugin_meta, $plugin_file) {
-    if (plugin_basename(MEDUZEAN_PLUGIN_FILE) === $plugin_file) {
-        $plugin_meta[] = '<a href="' . admin_url('admin.php?page=meduzean-ean') . '">' . __('Gérer les EAN', 'meduzean') . '</a>';
+    if (plugin_basename(__FILE__) === $plugin_file) {
+        $plugin_meta[] = '<a href="' . admin_url('admin.php?page=' . Constants::PLUGIN_SLUG) . '">' . 
+            __('Gérer les EAN', Constants::TEXT_DOMAIN) . '</a>';
     }
     return $plugin_meta;
 }, 10, 2);

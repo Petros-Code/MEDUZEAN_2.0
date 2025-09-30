@@ -39,7 +39,8 @@ class Plugin {
         $this->notice_manager = new Notice_Manager();
     }
 
-    public function register_hooks() {
+    public function registerHooks(): void
+    {
         add_action('admin_menu', [$this->admin, 'register_menus']);
         add_action('admin_init', [$this->admin, 'register_settings']);
         add_action('admin_enqueue_scripts', [$this->assets, 'enqueue_admin_assets']);

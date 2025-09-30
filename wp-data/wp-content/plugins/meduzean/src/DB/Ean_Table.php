@@ -1,9 +1,13 @@
 <?php
 namespace Meduzean\EanManager\DB;
 
+use Meduzean\EanManager\Interfaces\RepositoryInterface;
+use Meduzean\EanManager\Core\Constants;
+
 defined('ABSPATH') || exit;
 
-class Ean_Table {
+class Ean_Table implements RepositoryInterface
+{
     protected $table_name;
     protected $charset_collate;
 
@@ -33,22 +37,25 @@ class Ean_Table {
 
         require_once ABSPATH . 'wp-admin/includes/upgrade.php';
         dbDelta($sql);
-        update_option(MEDUZEAN_DB_VERSION_OPTION, MEDUZEAN_VERSION);
+        update_option(Constants::DB_VERSION_OPTION, Constants::VERSION);
     }
 
-    public function insert_ean($ean) {
+    public function insertEan(string $ean): int|false
+    {
         global $wpdb;
         $res = $wpdb->insert($this->table_name, ['ean' => $ean], ['%s']);
         return $res === false ? false : (int) $wpdb->insert_id;
     }
 
-    public function ean_exists($ean) {
+    public function eanExists(string $ean): int|false
+    {
         global $wpdb;
         $id = $wpdb->get_var($wpdb->prepare("SELECT id FROM {$this->table_name} WHERE ean = %s LIMIT 1", $ean));
         return $id ? intval($id) : false;
     }
 
-    public function get_all($limit = 20, $offset = 0, $orderby = 'ean_add_date', $order = 'DESC', $availability = '') {
+    public function getAll(int $limit = 20, int $offset = 0, string $orderby = 'ean_add_date', string $order = 'DESC', string $availability = ''): array
+    {
         global $wpdb;
 
         $allowed_orderby = ['ean_add_date', 'association_date'];
@@ -71,7 +78,8 @@ class Ean_Table {
         return $wpdb->get_results($sql, ARRAY_A);
     }
 
-    public function count_all($availability = '') {
+    public function countAll(string $availability = ''): int
+    {
         global $wpdb;
 
         $where = '1=1';
@@ -84,13 +92,15 @@ class Ean_Table {
         return (int) $wpdb->get_var("SELECT COUNT(*) FROM {$this->table_name} WHERE {$where}");
     }
 
-    public function delete_by_id($id) {
+    public function deleteById(int $id): bool
+    {
         global $wpdb;
-        $res = $wpdb->delete($this->table_name, ['id' => intval($id)], ['%d']);
-        return $res === false ? false : ($res > 0);
+        $res = $wpdb->delete($this->table_name, ['id' => $id], ['%d']);
+        return $res !== false && $res > 0;
     }
 
-    public function drop_table() {
+    public function dropTable(): void
+    {
         global $wpdb;
         $wpdb->query("DROP TABLE IF EXISTS {$this->table_name}");
     }

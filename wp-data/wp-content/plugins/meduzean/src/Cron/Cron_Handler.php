@@ -11,7 +11,7 @@ class Cron_Handler {
 	}
 
 	public function daily_check() {
-		$is_low = $this->service->check_low_stock();
+		$is_low = $this->service->checkLowStock();
 		
 		if (defined('WP_DEBUG') && WP_DEBUG) {
 			error_log('[Meduzean Cron] Daily check completed. Low stock: ' . ($is_low ? 'Yes' : 'No'));

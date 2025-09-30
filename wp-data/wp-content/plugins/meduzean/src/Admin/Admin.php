@@ -4,6 +4,7 @@ namespace Meduzean\EanManager\Admin;
 use Meduzean\EanManager\Admin\Pages\Ean_List_Page;
 use Meduzean\EanManager\Admin\Pages\Ean_Import_Page;
 use Meduzean\EanManager\Admin\Pages\Settings_Page;
+use Meduzean\EanManager\Core\Constants;
 
 defined('ABSPATH') || exit;
 
@@ -19,27 +20,27 @@ class Admin {
 			return;
 		}
 		add_menu_page(
-			__('EAN Manager', 'meduzean'),
-			__('EAN Manager', 'meduzean'),
+			__('EAN Manager', Constants::TEXT_DOMAIN),
+			__('EAN Manager', Constants::TEXT_DOMAIN),
 			'manage_options',
-			'meduzean-ean',
+			Constants::PLUGIN_SLUG,
 			[$this, 'render_list_page'],
-			MEDUZEAN_PLUGIN_URL . 'assets/icon.png'
+			Constants::getPluginUrl() . 'assets/icon.png'
 		);
 		add_submenu_page(
-			'meduzean-ean',
-			__('Importer EAN', 'meduzean'),
-			__('Importer', 'meduzean'),
+			Constants::PLUGIN_SLUG,
+			__('Importer EAN', Constants::TEXT_DOMAIN),
+			__('Importer', Constants::TEXT_DOMAIN),
 			'manage_options',
-			'meduzean-ean-import',
+			Constants::PLUGIN_SLUG . '-import',
 			[$this, 'render_import_page']
 		);
 		add_submenu_page(
-			'meduzean-ean',
-			__('Réglages', 'meduzean'),
-			__('Réglages', 'meduzean'),
+			Constants::PLUGIN_SLUG,
+			__('Réglages', Constants::TEXT_DOMAIN),
+			__('Réglages', Constants::TEXT_DOMAIN),
 			'manage_options',
-			'meduzean-ean-settings',
+			Constants::PLUGIN_SLUG . '-settings',
 			[$this, 'render_settings_page']
 		);
 	}

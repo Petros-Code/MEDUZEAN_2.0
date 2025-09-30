@@ -3,14 +3,18 @@ namespace Meduzean\EanManager\Services;
 
 use Meduzean\EanManager\DB\Ean_Table;
 use Meduzean\EanManager\Helpers\Validator;
+use Meduzean\EanManager\Interfaces\ServiceInterface;
+use Meduzean\EanManager\Interfaces\EmailServiceInterface;
+use Meduzean\EanManager\Exceptions\EanException;
 
 defined('ABSPATH') || exit;
 
-class Ean_Service {
+class Ean_Service implements ServiceInterface
+{
 	private $table;
 	private $emailService;
 
-	public function __construct(Ean_Table $table, Email_Service $emailService) {
+	public function __construct(Ean_Table $table, EmailServiceInterface $emailService) {
 		$this->table = $table;
 		$this->emailService = $emailService;
 	}
@@ -28,12 +32,12 @@ class Ean_Service {
 				continue;
 			}
 
-			if ($this->table->ean_exists($ean)) {
+			if ($this->table->eanExists($ean)) {
 				$errors[] = sprintf(__('Code EAN déjà existant: %s', 'meduzean'), $ean);
 				continue;
 			}
 
-			if ($this->table->insert_ean($ean)) {
+			if ($this->table->insertEan($ean)) {
 				$imported++;
 			} else {
 				$errors[] = sprintf(__('Erreur lors de l\'insertion: %s', 'meduzean'), $ean);
@@ -43,20 +47,23 @@ class Ean_Service {
 		return ['imported' => $imported, 'errors' => $errors];
 	}
 
-	public function get_available_count() {
-		return $this->table->count_all('available');
+	public function getAvailableCount(): int
+	{
+		return $this->table->countAll('available');
 	}
 
-	public function get_total_count() {
-		return $this->table->count_all();
+	public function getTotalCount(): int
+	{
+		return $this->table->countAll();
 	}
 
-	public function check_low_stock() {
+	public function checkLowStock(): bool
+	{
 		$threshold = get_option('meduzean_low_stock_threshold', 10);
-		$available = $this->get_available_count();
+		$available = $this->getAvailableCount();
 		
 		if ($available < $threshold) {
-			$this->emailService->send_low_stock_alert($available, $threshold);
+			$this->emailService->sendLowStockAlert($available, $threshold);
 			return true;
 		}
 		
@@ -70,9 +77,9 @@ class Ean_Service {
 			return new \WP_Error('product_not_found', __('Produit introuvable.', 'meduzean'));
 		}
 
-		$ean_id = $this->table->ean_exists($ean);
+		$ean_id = $this->table->eanExists($ean);
 		if (!$ean_id) {
-			return new \WP_Error('ean_not_found', __('Code EAN introuvable.', 'meduzean'));
+			throw new EanException(__('Code EAN introuvable.', 'meduzean'), EanException::EAN_NOT_FOUND);
 		}
 
 		$existing = $wpdb->get_var($wpdb->prepare(
