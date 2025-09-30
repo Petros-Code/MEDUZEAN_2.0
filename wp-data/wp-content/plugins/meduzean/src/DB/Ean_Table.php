@@ -17,9 +17,6 @@ class Ean_Table {
         return $this->table_name;
     }
 
-    /**
-     * Création / mise à jour de la table des EAN
-     */
     public function create_or_update_table() {
         global $wpdb;
 
@@ -36,48 +33,27 @@ class Ean_Table {
 
         require_once ABSPATH . 'wp-admin/includes/upgrade.php';
         dbDelta($sql);
-
-        // Sauvegarde de la version DB
         update_option(MEDUZEAN_DB_VERSION_OPTION, MEDUZEAN_VERSION);
     }
 
-    /**
-     * Insertion d’un EAN
-     */
     public function insert_ean($ean) {
         global $wpdb;
-        $res = $wpdb->insert(
-            $this->table_name,
-            [ 'ean' => $ean ],
-            [ '%s' ]
-        );
-        if ($res === false) {
-            return false;
-        }
-        return (int) $wpdb->insert_id;
+        $res = $wpdb->insert($this->table_name, ['ean' => $ean], ['%s']);
+        return $res === false ? false : (int) $wpdb->insert_id;
     }
 
-    /**
-     * Vérifie si un EAN existe
-     */
     public function ean_exists($ean) {
         global $wpdb;
-        $id = $wpdb->get_var(
-            $wpdb->prepare("SELECT id FROM {$this->table_name} WHERE ean = %s LIMIT 1", $ean)
-        );
+        $id = $wpdb->get_var($wpdb->prepare("SELECT id FROM {$this->table_name} WHERE ean = %s LIMIT 1", $ean));
         return $id ? intval($id) : false;
     }
 
-    /**
-     * Récupère la liste des EAN
-     */
     public function get_all($limit = 20, $offset = 0, $orderby = 'ean_add_date', $order = 'DESC', $availability = '') {
         global $wpdb;
 
-        // Whitelist pour éviter SQL injection
         $allowed_orderby = ['ean_add_date', 'association_date'];
         $orderby = in_array($orderby, $allowed_orderby, true) ? $orderby : 'ean_add_date';
-        $order   = strtoupper($order) === 'ASC' ? 'ASC' : 'DESC';
+        $order = strtoupper($order) === 'ASC' ? 'ASC' : 'DESC';
 
         $where = '1=1';
         if ($availability === 'available') {
@@ -95,9 +71,6 @@ class Ean_Table {
         return $wpdb->get_results($sql, ARRAY_A);
     }
 
-    /**
-     * Compte le nombre total d’EAN
-     */
     public function count_all($availability = '') {
         global $wpdb;
 
@@ -111,25 +84,12 @@ class Ean_Table {
         return (int) $wpdb->get_var("SELECT COUNT(*) FROM {$this->table_name} WHERE {$where}");
     }
 
-    /**
-     * Supprime un EAN par ID
-     */
     public function delete_by_id($id) {
         global $wpdb;
-        $res = $wpdb->delete(
-            $this->table_name,
-            ['id' => intval($id)],
-            ['%d']
-        );
-        if ($res === false) {
-            return false;
-        }
-        return ($res > 0);
+        $res = $wpdb->delete($this->table_name, ['id' => intval($id)], ['%d']);
+        return $res === false ? false : ($res > 0);
     }
 
-    /**
-     * Supprime la table (utilisé par uninstall.php)
-     */
     public function drop_table() {
         global $wpdb;
         $wpdb->query("DROP TABLE IF EXISTS {$this->table_name}");
