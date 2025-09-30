@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Meduzean EAN Manager
  * Description: Gestion des codes EAN (import, assignation, alertes cron).
- * Version: 1.1.0
+ * Version: 1.2.0 Refacto
  * Author: Petros-Code
  * Text Domain: meduzean
  * Domain Path: /languages
