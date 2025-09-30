@@ -7,7 +7,27 @@
 
 // Vérifier que nous sommes dans WordPress
 if (!defined('ABSPATH')) {
-    require_once('../../../wp-load.php');
+    // Essayer plusieurs chemins possibles pour wp-load.php
+    $wp_load_paths = [
+        '../../../wp-load.php',
+        '../../../../wp-load.php',
+        '../../../../../wp-load.php',
+        dirname(__FILE__) . '/../../../wp-load.php',
+        dirname(__FILE__) . '/../../../../wp-load.php'
+    ];
+    
+    $wp_loaded = false;
+    foreach ($wp_load_paths as $path) {
+        if (file_exists($path)) {
+            require_once($path);
+            $wp_loaded = true;
+            break;
+        }
+    }
+    
+    if (!$wp_loaded) {
+        die('❌ Erreur : Impossible de charger WordPress. Vérifiez le chemin vers wp-load.php');
+    }
 }
 
 use Meduzean\EanManager\Helpers\Product_Association_Helper;
