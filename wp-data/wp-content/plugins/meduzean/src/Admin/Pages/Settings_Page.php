@@ -194,7 +194,7 @@ class Settings_Page {
         $available_count = $this->get_available_count();
         $threshold = get_option('meduzean_low_stock_threshold', 10);
 
-        $result = $email_service->send_low_stock_alert($available_count, $threshold);
+        $result = $email_service->sendLowStockAlert($available_count, $threshold);
 
         if ($result) {
             add_action('admin_notices', function() {
