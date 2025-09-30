@@ -149,7 +149,7 @@ class Ean_List_Page {
                                     <?php endif; ?>
                                 </td>
                                 <td>
-                                    <a href="<?php echo wp_nonce_url(admin_url('admin.php?page=meduzean-ean&action=delete&ean_id=' . $ean['id']), 'delete_ean_' . $ean['id']); ?>" 
+                                    <a href="<?php echo wp_nonce_url($this->get_pagination_url(['action' => 'delete', 'ean_id' => $ean['id']]), 'delete_ean_' . $ean['id']); ?>" 
                                        class="button button-small">
                                         <?php _e('Supprimer', 'meduzean'); ?>
                                     </a>
@@ -271,6 +271,30 @@ class Ean_List_Page {
         // Préserver le filtre de disponibilité s'il existe
         if (!empty($availability)) {
             $args['availability'] = $availability;
+        }
+
+        return admin_url('admin.php?' . http_build_query($args));
+    }
+
+    /**
+     * Génère l'URL en préservant tous les paramètres actuels
+     */
+    private function get_pagination_url($additional_params = []) {
+        $args = [
+            'page' => 'meduzean-ean'
+        ];
+
+        // Préserver tous les paramètres actuels
+        $preserve_params = ['availability', 's', 'orderby', 'order', 'paged'];
+        foreach ($preserve_params as $param) {
+            if (isset($_GET[$param]) && !empty($_GET[$param])) {
+                $args[$param] = sanitize_text_field($_GET[$param]);
+            }
+        }
+
+        // Ajouter les paramètres supplémentaires
+        if (!empty($additional_params)) {
+            $args = array_merge($args, $additional_params);
         }
 
         return admin_url('admin.php?' . http_build_query($args));
