@@ -4,7 +4,6 @@ namespace Meduzean\EanManager\Core;
 use Meduzean\EanManager\Admin\Admin;
 use Meduzean\EanManager\Admin\Assets;
 use Meduzean\EanManager\Admin\Notice_Manager;
-use Meduzean\EanManager\Admin\WooCommerce_Integration;
 use Meduzean\EanManager\API\Rest_Controller;
 use Meduzean\EanManager\Cron\Cron_Handler;
 use Meduzean\EanManager\DB\Ean_Table;
@@ -47,8 +46,6 @@ class Plugin {
     /** @var Notice_Manager */
     public $notice_manager;
 
-    /** @var WooCommerce_Integration */
-    public $woocommerce;
 
     public static function instance() {
         if ( null === self::$instance ) {
@@ -68,7 +65,6 @@ class Plugin {
         $this->rest = new Rest_Controller( $this->service );
         $this->product_hooks = new Product_Hooks();
         $this->notice_manager = new Notice_Manager();
-        $this->woocommerce = new WooCommerce_Integration();
     }
 
     public function register_hooks() {
