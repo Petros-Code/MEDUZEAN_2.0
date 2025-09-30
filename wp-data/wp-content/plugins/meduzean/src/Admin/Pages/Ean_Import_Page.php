@@ -221,12 +221,12 @@ class Ean_Import_Page {
                     continue;
                 }
                 
-                if ($this->table->ean_exists($ean)) {
+                if ($this->table->eanExists($ean)) {
                     $duplicates[] = $ean;
                     continue;
                 }
                 
-                if ($this->table->insert_ean($ean)) {
+                if ($this->table->insertEan($ean)) {
                     $imported++;
                 } else {
                     $errors[] = sprintf(__('Erreur lors de l\'insertion: %s', 'meduzean'), $ean);

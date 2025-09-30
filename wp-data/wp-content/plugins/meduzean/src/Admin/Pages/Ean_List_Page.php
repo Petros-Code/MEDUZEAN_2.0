@@ -32,9 +32,9 @@ class Ean_List_Page {
         $order = isset($_GET['order']) ? sanitize_text_field($_GET['order']) : 'DESC';
 
         // Récupération des données
-        $eans = $this->table->get_all($per_page, $offset, $orderby, $order, $availability);
-        $total = $this->table->count_all($availability);
-        $total_all_eans = $this->table->count_all(); // Total sans filtre
+        $eans = $this->table->getAll($per_page, $offset, $orderby, $order, $availability);
+        $total = $this->table->countAll($availability);
+        $total_all_eans = $this->table->countAll(); // Total sans filtre
 
         ?>
         <div class="wrap">
@@ -238,7 +238,7 @@ class Ean_List_Page {
         $ean_id = intval($_GET['ean_id']);
 
         if ($action === 'delete' && wp_verify_nonce($_GET['_wpnonce'], 'delete_ean_' . $ean_id)) {
-            if ($this->table->delete_by_id($ean_id)) {
+            if ($this->table->deleteById($ean_id)) {
                 add_action('admin_notices', function() {
                     echo '<div class="notice notice-success is-dismissible"><p>' . __('Code EAN supprimé avec succès.', 'meduzean') . '</p></div>';
                 });

@@ -106,8 +106,8 @@ class Rest_Controller {
 		$availability = $request->get_param('availability');
 
 		$offset = ($page - 1) * $per_page;
-		$eans = $this->table->get_all($per_page, $offset, 'ean_add_date', 'DESC', $availability);
-		$total = $this->table->count_all($availability);
+		$eans = $this->table->getAll($per_page, $offset, 'ean_add_date', 'DESC', $availability);
+		$total = $this->table->countAll($availability);
 
 		return new \WP_REST_Response([
 			'data' => $eans,
@@ -128,12 +128,12 @@ class Rest_Controller {
 				continue;
 			}
 
-			if ($this->table->ean_exists($ean)) {
+			if ($this->table->eanExists($ean)) {
 				$errors[] = sprintf(__('Code EAN déjà existant: %s', 'meduzean'), $ean);
 				continue;
 			}
 
-			if ($this->table->insert_ean($ean)) {
+			if ($this->table->insertEan($ean)) {
 				$imported++;
 			} else {
 				$errors[] = sprintf(__('Erreur lors de l\'insertion: %s', 'meduzean'), $ean);
@@ -150,7 +150,7 @@ class Rest_Controller {
 	public function delete_ean($request) {
 		$id = $request->get_param('id');
 
-		if ($this->table->delete_by_id($id)) {
+		if ($this->table->deleteById($id)) {
 			return new \WP_REST_Response([
 				'message' => __('Code EAN supprimé avec succès.', 'meduzean')
 			], 200);
@@ -173,7 +173,7 @@ class Rest_Controller {
 		}
 
 		// Vérifier que l'EAN existe et est disponible
-		$ean_id = $this->table->ean_exists($ean);
+		$ean_id = $this->table->eanExists($ean);
 		if (!$ean_id) {
 			return new \WP_REST_Response([
 				'message' => __('Code EAN introuvable.', 'meduzean')
@@ -183,7 +183,7 @@ class Rest_Controller {
 		// Vérifier que l'EAN n'est pas déjà assigné
 		global $wpdb;
 		$existing = $wpdb->get_var($wpdb->prepare(
-			"SELECT product_id FROM {$this->table->get_table_name()} WHERE ean = %s",
+			"SELECT product_id FROM {$this->table->getTableName()} WHERE ean = %s",
 			$ean
 		));
 
@@ -195,7 +195,7 @@ class Rest_Controller {
 
 		// Assigner l'EAN au produit
 		$result = $wpdb->update(
-			$this->table->get_table_name(),
+			$this->table->getTableName(),
 			[
 				'product_id' => $product_id,
 				'association_date' => current_time('mysql')
