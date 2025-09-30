@@ -50,20 +50,20 @@ class Product_Association_Service {
         if (!empty($existing_ean)) return true;
 
         global $wpdb;
-        $ean_table = $this->ean_table->get_table_name();
+        $ean_table = $this->ean_table->getTableName();
         $existing = $wpdb->get_var($wpdb->prepare("SELECT ean FROM {$ean_table} WHERE product_id = %d LIMIT 1", $product_id));
         return !empty($existing);
     }
 
     private function get_first_available_ean() {
         global $wpdb;
-        $ean_table = $this->ean_table->get_table_name();
+        $ean_table = $this->ean_table->getTableName();
         return $wpdb->get_row("SELECT * FROM {$ean_table} WHERE product_id IS NULL ORDER BY ean_add_date ASC LIMIT 1", ARRAY_A);
     }
 
     private function associate_ean_to_product($ean, $product_id) {
         global $wpdb;
-        $ean_table = $this->ean_table->get_table_name();
+        $ean_table = $this->ean_table->getTableName();
 
         $updated = $wpdb->update(
             $ean_table,
@@ -106,7 +106,7 @@ class Product_Association_Service {
 
     public function dissociate_ean_from_product($product_id) {
         global $wpdb;
-        $ean_table = $this->ean_table->get_table_name();
+        $ean_table = $this->ean_table->getTableName();
 
         $ean = get_post_meta($product_id, '_ean', true);
         if (empty($ean)) return true;

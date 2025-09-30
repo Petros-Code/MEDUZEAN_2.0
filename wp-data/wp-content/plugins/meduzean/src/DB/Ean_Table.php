@@ -17,11 +17,13 @@ class Ean_Table implements RepositoryInterface
         $this->charset_collate = $wpdb->get_charset_collate();
     }
 
-    public function get_table_name() {
+    public function getTableName(): string
+    {
         return $this->table_name;
     }
 
-    public function create_or_update_table() {
+    public function createOrUpdateTable(): void
+    {
         global $wpdb;
 
         $sql = "CREATE TABLE {$this->table_name} (

@@ -83,7 +83,7 @@ class Ean_Service implements ServiceInterface
 		}
 
 		$existing = $wpdb->get_var($wpdb->prepare(
-			"SELECT product_id FROM {$this->table->get_table_name()} WHERE ean = %s",
+			"SELECT product_id FROM {$this->table->getTableName()} WHERE ean = %s",
 			$ean
 		));
 
@@ -92,7 +92,7 @@ class Ean_Service implements ServiceInterface
 		}
 
 		$result = $wpdb->update(
-			$this->table->get_table_name(),
+			$this->table->getTableName(),
 			['product_id' => $product_id, 'association_date' => current_time('mysql')],
 			['ean' => $ean],
 			['%d', '%s'],

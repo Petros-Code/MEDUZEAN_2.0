@@ -5,6 +5,7 @@ defined('ABSPATH') || exit;
 
 interface RepositoryInterface
 {
+    public function getTableName(): string;
     public function createOrUpdateTable(): void;
     public function insertEan(string $ean): int|false;
     public function eanExists(string $ean): int|false;
