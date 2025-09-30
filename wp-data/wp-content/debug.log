@@ -6865,3 +6865,507 @@ Stack trace:
 [29-Sep-2025 14:56:30 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Product_Association_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Product_Association_Service.php
 [29-Sep-2025 14:56:30 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
 [29-Sep-2025 14:56:30 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\WooCommerce_Integration from /var/www/html/wp-content/plugins/meduzean/src/Admin/WooCommerce_Integration.php
+[30-Sep-2025 12:18:24 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:18:24 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:18:24 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:18:24 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:18:24 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:18:24 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:18:24 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:18:24 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:18:24 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:18:27 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:18:27 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:18:27 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:18:27 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:18:27 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:18:27 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:18:27 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:18:27 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:18:27 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:18:28 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_List_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php
+[30-Sep-2025 12:18:29 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:18:29 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:18:29 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:18:29 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:18:29 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:18:29 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:18:29 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:18:29 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:18:29 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:18:29 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_Import_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_Import_Page.php
+[30-Sep-2025 12:18:30 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:18:30 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:18:30 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:18:30 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:18:30 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:18:30 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:18:30 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:18:30 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:18:30 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:18:30 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Settings_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Settings_Page.php
+[30-Sep-2025 12:18:42 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:18:42 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:18:42 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:18:42 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:18:42 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:18:42 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:18:42 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:18:42 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:18:42 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:18:42 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Settings_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Settings_Page.php
+[30-Sep-2025 12:18:52 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:18:52 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:18:52 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:18:52 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:18:52 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:18:52 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:18:52 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:18:52 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:18:52 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:18:52 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_List_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php
+[30-Sep-2025 12:18:54 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:18:54 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:18:54 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:18:54 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:18:54 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:18:54 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:18:54 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:18:54 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:18:54 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:18:55 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_List_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php
+[30-Sep-2025 12:18:55 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:18:55 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:18:55 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:18:55 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:18:55 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:18:55 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:18:55 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:18:55 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:18:55 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:18:56 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_List_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php
+[30-Sep-2025 12:18:56 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:18:56 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:18:56 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:18:56 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:18:56 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:18:56 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:18:56 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:18:56 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:18:56 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:18:57 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_List_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php
+[30-Sep-2025 12:18:57 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:18:57 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:18:57 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:18:57 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:18:57 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:18:57 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:18:57 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:18:57 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:18:57 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:18:57 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_List_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php
+[30-Sep-2025 12:19:01 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:19:01 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:19:01 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:19:01 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:19:01 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:19:01 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:19:01 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:19:01 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:19:01 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:19:01 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_List_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php
+[30-Sep-2025 12:19:05 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:19:05 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:19:05 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:19:05 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:19:05 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:19:05 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:19:05 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:19:05 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:19:05 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:19:06 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_List_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php
+[30-Sep-2025 12:19:11 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:19:11 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:19:11 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:19:11 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:19:11 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:19:11 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:19:11 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:19:11 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:19:11 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:19:11 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_List_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php
+[30-Sep-2025 12:19:14 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:19:14 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:19:14 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:19:14 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:19:14 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:19:14 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:19:14 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:19:14 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:19:14 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:19:15 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_List_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php
+[30-Sep-2025 12:19:16 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:19:16 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:19:16 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:19:16 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:19:16 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:19:16 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:19:16 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:19:16 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:19:16 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:19:16 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_List_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php
+[30-Sep-2025 12:19:22 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:19:22 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:19:22 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:19:22 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:19:22 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:19:22 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:19:22 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:19:22 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:19:22 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:19:22 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_List_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php
+[30-Sep-2025 12:19:25 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:19:25 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:19:25 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:19:25 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:19:25 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:19:25 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:19:25 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:19:25 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:19:25 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:19:25 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_List_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php
+[30-Sep-2025 12:19:34 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:19:34 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:19:34 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:19:34 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:19:34 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:19:34 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:19:34 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:19:34 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:19:34 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:19:35 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_List_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php
+[30-Sep-2025 12:19:40 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:19:40 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:19:40 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:19:40 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:19:40 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:19:40 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:19:40 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:19:40 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:19:40 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:19:40 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_List_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php
+[30-Sep-2025 12:19:41 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:19:41 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:19:41 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:19:41 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:19:41 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:19:41 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:19:41 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:19:41 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:19:41 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:19:42 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_List_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php
+[30-Sep-2025 12:19:43 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:19:43 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:19:43 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:19:43 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:19:43 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:19:43 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:19:43 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:19:43 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:19:43 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:19:43 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_List_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php
+[30-Sep-2025 12:19:44 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:19:44 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:19:44 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:19:44 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:19:44 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:19:44 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:19:44 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:19:44 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:19:44 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:19:44 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_List_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php
+[30-Sep-2025 12:19:45 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:19:45 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:19:45 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:19:45 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:19:45 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:19:45 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:19:45 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:19:45 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:19:45 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:19:45 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_List_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php
+[30-Sep-2025 12:19:49 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:19:49 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:19:49 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:19:49 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:19:49 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:19:49 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:19:49 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:19:49 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:19:49 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:19:49 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_List_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php
+[30-Sep-2025 12:19:51 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:19:51 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:19:51 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:19:51 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:19:51 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:19:51 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:19:51 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:19:51 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:19:51 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:19:51 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_List_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php
+[30-Sep-2025 12:19:52 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:19:52 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:19:52 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:19:52 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:19:52 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:19:52 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:19:52 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:19:52 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:19:52 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:19:52 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_List_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php
+[30-Sep-2025 12:19:53 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:19:53 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:19:53 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:19:53 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:19:53 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:19:53 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:19:53 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:19:53 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:19:53 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:19:54 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_List_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php
+[30-Sep-2025 12:20:04 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:20:04 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:20:04 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:20:04 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:20:04 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:20:04 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:20:04 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:20:04 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:20:04 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:20:04 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Ean_Import_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_Import_Page.php
+[30-Sep-2025 12:20:09 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:20:09 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:20:09 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:20:09 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:20:09 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:20:09 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:20:09 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:20:09 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:20:09 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:20:09 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Pages\Settings_Page from /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Settings_Page.php
+[30-Sep-2025 12:21:09 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:21:09 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:21:09 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:21:09 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:21:09 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:21:09 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:21:09 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:21:09 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:21:09 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:22:10 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:22:10 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:22:10 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:22:10 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:22:10 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:22:10 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:22:10 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:22:10 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:22:10 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:24:11 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:24:11 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:24:11 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:24:11 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:24:11 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:24:11 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:24:11 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:24:11 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:24:11 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:26:12 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:26:12 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:26:12 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:26:12 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:26:12 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:26:12 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:26:12 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:26:12 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:26:12 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:28:13 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:28:13 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:28:13 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:28:13 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:28:13 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:28:13 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:28:13 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:28:13 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:28:13 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:30:14 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Core\Plugin from /var/www/html/wp-content/plugins/meduzean/src/Core/Plugin.php
+[30-Sep-2025 12:30:14 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\DB\Ean_Table from /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php
+[30-Sep-2025 12:30:14 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Ean_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Ean_Service.php
+[30-Sep-2025 12:30:14 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Services\Email_Service from /var/www/html/wp-content/plugins/meduzean/src/Services/Email_Service.php
+[30-Sep-2025 12:30:14 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Admin from /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php
+[30-Sep-2025 12:30:14 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Assets from /var/www/html/wp-content/plugins/meduzean/src/Admin/Assets.php
+[30-Sep-2025 12:30:14 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\API\Rest_Controller from /var/www/html/wp-content/plugins/meduzean/src/API/Rest_Controller.php
+[30-Sep-2025 12:30:14 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Cron\Cron_Handler from /var/www/html/wp-content/plugins/meduzean/src/Cron/Cron_Handler.php
+[30-Sep-2025 12:30:14 UTC] [Meduzean Autoload] Trying to load Meduzean\EanManager\Admin\Notice_Manager from /var/www/html/wp-content/plugins/meduzean/src/Admin/Notice_Manager.php
+[30-Sep-2025 12:37:42 UTC] PHP Fatal error:  Uncaught Error: Class "Meduzean\EanManager\Core\Constants" not found in /var/www/html/wp-content/plugins/meduzean/meduzean.php:20
+Stack trace:
+#0 /var/www/html/wp-settings.php(545): include_once()
+#1 /var/www/html/wp-config.php(141): require_once('/var/www/html/w...')
+#2 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#3 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/meduzean.php on line 20
+[30-Sep-2025 12:37:42 UTC] PHP Fatal error:  Uncaught Error: Class "Meduzean\EanManager\Core\Constants" not found in /var/www/html/wp-content/plugins/meduzean/meduzean.php:20
+Stack trace:
+#0 /var/www/html/wp-settings.php(545): include_once()
+#1 /var/www/html/wp-config.php(141): require_once('/var/www/html/w...')
+#2 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#3 /var/www/html/wp-admin/admin.php(35): require_once('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/meduzean.php on line 20
+[30-Sep-2025 12:37:58 UTC] PHP Fatal error:  Uncaught Error: Class "Meduzean\EanManager\Core\Constants" not found in /var/www/html/wp-content/plugins/meduzean/meduzean.php:20
+Stack trace:
+#0 /var/www/html/wp-settings.php(545): include_once()
+#1 /var/www/html/wp-config.php(141): require_once('/var/www/html/w...')
+#2 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#3 /var/www/html/wp-admin/admin.php(35): require_once('/var/www/html/w...')
+#4 /var/www/html/wp-admin/index.php(10): require_once('/var/www/html/w...')
+#5 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/meduzean.php on line 20
+[30-Sep-2025 12:37:58 UTC] PHP Fatal error:  Uncaught Error: Class "Meduzean\EanManager\Core\Constants" not found in /var/www/html/wp-content/plugins/meduzean/meduzean.php:20
+Stack trace:
+#0 /var/www/html/wp-settings.php(545): include_once()
+#1 /var/www/html/wp-config.php(141): require_once('/var/www/html/w...')
+#2 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#3 /var/www/html/wp-admin/admin.php(35): require_once('/var/www/html/w...')
+#4 /var/www/html/wp-admin/index.php(10): require_once('/var/www/html/w...')
+#5 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/meduzean.php on line 20
+[30-Sep-2025 12:38:36 UTC] PHP Fatal error:  Uncaught Error: Class "Meduzean\EanManager\Core\Constants" not found in /var/www/html/wp-content/plugins/meduzean/meduzean.php:20
+Stack trace:
+#0 /var/www/html/wp-settings.php(545): include_once()
+#1 /var/www/html/wp-config.php(141): require_once('/var/www/html/w...')
+#2 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#3 /var/www/html/wp-admin/admin.php(35): require_once('/var/www/html/w...')
+#4 /var/www/html/wp-admin/index.php(10): require_once('/var/www/html/w...')
+#5 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/meduzean.php on line 20
+[30-Sep-2025 12:56:06 UTC] PHP Fatal error:  Uncaught Error: Class "Meduzean\EanManager\Core\Constants" not found in /var/www/html/wp-content/plugins/meduzean/meduzean.php:20
+Stack trace:
+#0 /var/www/html/wp-settings.php(545): include_once()
+#1 /var/www/html/wp-config.php(141): require_once('/var/www/html/w...')
+#2 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#3 /var/www/html/wp-admin/admin.php(35): require_once('/var/www/html/w...')
+#4 /var/www/html/wp-admin/index.php(10): require_once('/var/www/html/w...')
+#5 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/meduzean.php on line 20
+[30-Sep-2025 12:56:53 UTC] PHP Fatal error:  Uncaught Error: Class "Meduzean\EanManager\Core\Constants" not found in /var/www/html/wp-content/plugins/meduzean/meduzean.php:20
+Stack trace:
+#0 /var/www/html/wp-settings.php(545): include_once()
+#1 /var/www/html/wp-config.php(141): require_once('/var/www/html/w...')
+#2 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#3 /var/www/html/wp-admin/admin.php(35): require_once('/var/www/html/w...')
+#4 /var/www/html/wp-admin/index.php(10): require_once('/var/www/html/w...')
+#5 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/meduzean.php on line 20
+[30-Sep-2025 13:14:13 UTC] PHP Fatal error:  Uncaught Error: Class "Meduzean\EanManager\Core\Constants" not found in /var/www/html/wp-content/plugins/meduzean/meduzean.php:20
+Stack trace:
+#0 /var/www/html/wp-settings.php(545): include_once()
+#1 /var/www/html/wp-config.php(141): require_once('/var/www/html/w...')
+#2 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#3 /var/www/html/wp-admin/admin.php(35): require_once('/var/www/html/w...')
+#4 /var/www/html/wp-admin/index.php(10): require_once('/var/www/html/w...')
+#5 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/meduzean.php on line 20
+[30-Sep-2025 13:17:45 UTC] PHP Fatal error:  Class Meduzean\EanManager\DB\Ean_Table contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Meduzean\EanManager\Interfaces\RepositoryInterface::createOrUpdateTable) in /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php on line 9
+[30-Sep-2025 13:18:00 UTC] PHP Fatal error:  Class Meduzean\EanManager\DB\Ean_Table contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Meduzean\EanManager\Interfaces\RepositoryInterface::createOrUpdateTable) in /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php on line 9
+[30-Sep-2025 13:18:54 UTC] PHP Fatal error:  Class Meduzean\EanManager\DB\Ean_Table contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Meduzean\EanManager\Interfaces\RepositoryInterface::createOrUpdateTable) in /var/www/html/wp-content/plugins/meduzean/src/DB/Ean_Table.php on line 9
+[30-Sep-2025 13:22:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Meduzean\EanManager\DB\Ean_Table::get_all() in /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php:35
+Stack trace:
+#0 /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php(56): Meduzean\EanManager\Admin\Pages\Ean_List_Page->render()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): Meduzean\EanManager\Admin\Admin->render_list_page('')
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-admin/admin.php(260): do_action('toplevel_page_m...')
+#5 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php on line 35
+[30-Sep-2025 13:22:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Meduzean\EanManager\DB\Ean_Table::get_all() in /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php:35
+Stack trace:
+#0 /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php(56): Meduzean\EanManager\Admin\Pages\Ean_List_Page->render()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): Meduzean\EanManager\Admin\Admin->render_list_page('')
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-admin/admin.php(260): do_action('toplevel_page_m...')
+#5 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php on line 35
+[30-Sep-2025 13:23:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Meduzean\EanManager\DB\Ean_Table::get_all() in /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php:35
+Stack trace:
+#0 /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php(56): Meduzean\EanManager\Admin\Pages\Ean_List_Page->render()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): Meduzean\EanManager\Admin\Admin->render_list_page('')
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-admin/admin.php(260): do_action('toplevel_page_m...')
+#5 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php on line 35
+[30-Sep-2025 13:23:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Meduzean\EanManager\DB\Ean_Table::get_all() in /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php:35
+Stack trace:
+#0 /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php(56): Meduzean\EanManager\Admin\Pages\Ean_List_Page->render()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): Meduzean\EanManager\Admin\Admin->render_list_page('')
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-admin/admin.php(260): do_action('toplevel_page_m...')
+#5 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Ean_List_Page.php on line 35
+[30-Sep-2025 13:28:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Meduzean\EanManager\Services\Email_Service::send_low_stock_alert() in /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Settings_Page.php:197
+Stack trace:
+#0 /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Settings_Page.php(16): Meduzean\EanManager\Admin\Pages\Settings_Page->handle_test_alert()
+#1 /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php(64): Meduzean\EanManager\Admin\Pages\Settings_Page->render()
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): Meduzean\EanManager\Admin\Admin->render_settings_page('')
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-admin/admin.php(260): do_action('ean-manager_pag...')
+#6 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Settings_Page.php on line 197
+[30-Sep-2025 13:29:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Meduzean\EanManager\Services\Email_Service::send_low_stock_alert() in /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Settings_Page.php:197
+Stack trace:
+#0 /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Settings_Page.php(16): Meduzean\EanManager\Admin\Pages\Settings_Page->handle_test_alert()
+#1 /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php(64): Meduzean\EanManager\Admin\Pages\Settings_Page->render()
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): Meduzean\EanManager\Admin\Admin->render_settings_page('')
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-admin/admin.php(260): do_action('ean-manager_pag...')
+#6 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Settings_Page.php on line 197
+[30-Sep-2025 13:30:34 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Meduzean\EanManager\Services\Email_Service::send_low_stock_alert() in /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Settings_Page.php:197
+Stack trace:
+#0 /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Settings_Page.php(16): Meduzean\EanManager\Admin\Pages\Settings_Page->handle_test_alert()
+#1 /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php(64): Meduzean\EanManager\Admin\Pages\Settings_Page->render()
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): Meduzean\EanManager\Admin\Admin->render_settings_page('')
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-admin/admin.php(260): do_action('ean-manager_pag...')
+#6 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Settings_Page.php on line 197
+[30-Sep-2025 13:37:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Meduzean\EanManager\Services\Email_Service::send_low_stock_alert() in /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Settings_Page.php:197
+Stack trace:
+#0 /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Settings_Page.php(16): Meduzean\EanManager\Admin\Pages\Settings_Page->handle_test_alert()
+#1 /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php(64): Meduzean\EanManager\Admin\Pages\Settings_Page->render()
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): Meduzean\EanManager\Admin\Admin->render_settings_page('')
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-admin/admin.php(260): do_action('ean-manager_pag...')
+#6 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Settings_Page.php on line 197
+[30-Sep-2025 13:37:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Meduzean\EanManager\Services\Email_Service::send_low_stock_alert() in /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Settings_Page.php:197
+Stack trace:
+#0 /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Settings_Page.php(16): Meduzean\EanManager\Admin\Pages\Settings_Page->handle_test_alert()
+#1 /var/www/html/wp-content/plugins/meduzean/src/Admin/Admin.php(64): Meduzean\EanManager\Admin\Pages\Settings_Page->render()
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): Meduzean\EanManager\Admin\Admin->render_settings_page('')
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-admin/admin.php(260): do_action('ean-manager_pag...')
+#6 {main}
+  thrown in /var/www/html/wp-content/plugins/meduzean/src/Admin/Pages/Settings_Page.php on line 197
+[30-Sep-2025 13:43:46 UTC] PHP Deprecated:  strip_tags(): Passing null to parameter #1 ($string) of type string is deprecated in /var/www/html/wp-admin/admin-header.php on line 41
+[30-Sep-2025 13:44:08 UTC] PHP Deprecated:  strip_tags(): Passing null to parameter #1 ($string) of type string is deprecated in /var/www/html/wp-admin/admin-header.php on line 41

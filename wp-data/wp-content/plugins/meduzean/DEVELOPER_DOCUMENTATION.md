@@ -274,7 +274,7 @@ error_log('[Meduzean Debug] Message de debug');
 
 ## Changelog
 
-### Version 1.2.0 Refacto
+### Version 1.3.0 Doc
 - Refactorisation complète OOP
 - Respect des standards PSR-4 et PSR-12
 - Découplage de WooCommerce
